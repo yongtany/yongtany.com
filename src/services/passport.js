@@ -28,6 +28,7 @@ passport.use(new JwtStrategy({
   }
 }));
 
+// FACEBOOK OAUTH STRATEGY
 passport.use('facebookToken', new FacebookTokenStrategy({
   clientID: config.oauth.facebook.clientID,
   clientSecret: config.oauth.facebook.clientSecret
@@ -46,7 +47,9 @@ passport.use('facebookToken', new FacebookTokenStrategy({
       method: 'facebook',
       facebook: {
         id: profile.id,
-        email: profile.emails[0].value
+        email: profile.emails[0].value,
+        userName: profile.displayName,
+        profile_image: profile.photos[0].value
       }
     });
 
@@ -78,7 +81,9 @@ passport.use('googleToken', new GooglePlusTokenStrategy({
       method: 'google',
       google: {
         id: profile.id,
-        email: profile.emails[0].value
+        email: profile.emails[0].value,
+        userName: profile.displayName,
+        profile_image: profile.photos[0].value
       }
     });
 
@@ -104,10 +109,10 @@ passport.use(new LocalStrategy({
     }
 
     // check if the password is correct
-    const isMath = await user.isValidPassword(password);
+    const isMatch = await user.isValidPassword(password);
 
     // If not, handle it
-    if(!isMath) {
+    if(!isMatch) {
       return done(null, false);
     }
 

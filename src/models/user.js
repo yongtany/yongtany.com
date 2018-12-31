@@ -16,6 +16,12 @@ const userSchema = Schema({
     },
     password: {
       type: String,
+    },
+    userName: {
+      type: String,
+    },
+    profile_image: {
+      type: String
     }
   },
   google: {
@@ -25,6 +31,12 @@ const userSchema = Schema({
     email: {
       type: String,
       lowercase: true
+    },
+    userName: {
+      type: String,
+    },
+    profile_image: {
+      type: String
     }
   },
   facebook: {
@@ -34,6 +46,12 @@ const userSchema = Schema({
     email: {
       type: String,
       lowercase: true
+    },
+    userName: {
+      type: String,
+    },
+    profile_image: {
+      type: String
     }
   }
 });
@@ -57,12 +75,10 @@ userSchema.pre('save', async function(next) {
   }
 });
 
-userSchema.methods.isValidPassword = async function(newPassword) {
-  try {
-    return await bcrypt.compare(newPassword, this.local.password);
-  } catch (error) {
-    throw new Error(error);
-  }
+userSchema.methods = {
+  isValidPassword(password) {
+    return bcrypt.compare(password, this.local.password);
+  },
 }
 
 
