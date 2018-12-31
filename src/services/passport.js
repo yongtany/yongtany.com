@@ -122,3 +122,10 @@ passport.use(new LocalStrategy({
       done(error, false);
     }
 }));
+
+module.exports = {
+   passportSignIn: passport.authenticate('local', {session: false }),
+   passportJWT: passport.authenticate('jwt', { session: false }),
+   passportGoogle: passport.authenticate('googleToken', { session: false }),
+   passportFacebook: passport.authenticate('facebookToken', { session : false }),
+}

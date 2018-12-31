@@ -20,6 +20,12 @@ module.exports = {
       password: Joi.string().required(),
       userName: Joi.string(),
       profile_image: Joi.string()
+    }),
+
+    postSchema: Joi.object().keys({
+      title: Joi.string().required(), // 뒤에 required를 붙여주면 필수 항목이라는 의미
+      text: Joi.string().required(),
+      tags: Joi.array().items(Joi.string()).required() // 문자열 배열
     })
   }
 }

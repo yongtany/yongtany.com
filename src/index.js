@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/nomadyong-dev');
+mongoose.connect('mongodb://localhost/nomadyong-dev', { useNewUrlParser: true });
 
 const app = express();
 

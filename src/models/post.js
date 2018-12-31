@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Post = new Schema({
+const postSchema = new Schema({
   title: String,
-  body: String,
+  text: String,
   tags: [String],
-  publishedDtate: {
+  publishedDate: {
     type: Date,
     default: new Date() // 현재 날짜를 기본값으로
   },
@@ -19,4 +19,29 @@ const Post = new Schema({
   },
 });
 
-modeuls.exports = monggose.model('Post', Post);
+postSchema.methods = {
+  toJSON() {
+    return {
+      _id: this._id,
+      title: this.title,
+      text: this.text,
+      tags: this.tags,
+      publishedDate: this.publishedDate,
+      user: this.user,
+      favoriteCount: this.favoriteCount,
+    };
+  },
+};
+
+postSchema.statics = {
+  createPost(args, user) {
+    return this.create({
+      ...args,
+      user,
+    });
+  },
+};
+
+
+
+module.exports = mongoose.model('Post', postSchema);

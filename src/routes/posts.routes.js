@@ -1,9 +1,18 @@
 const router = require('express-promise-router')();
+const passport = require('passport');
+const passportConf = require('services/passport');
 
+const { validateBody, schemas } = require('validations/validations');
+const PostsControllers = require('controllers/posts');
+const passportJWT = passport.authenticate('jwt', { session: false });
+
+
+/*
+  POST /api/posts
+  { title, body, tags }
+*/
 router.route('/')
-  .get(function (req, res) {
-    res.send({message: 'post routes!'});
-  });
+  .post(passportJWT, validateBody(schemas.postSchema), PostsControllers.createPost);
 
 
 module.exports = router;
