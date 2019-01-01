@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
   title: String,
-  text: String,
+  body: String,
   tags: [String],
   publishedDate: {
     type: Date,
@@ -24,7 +24,7 @@ postSchema.methods = {
     return {
       _id: this._id,
       title: this.title,
-      text: this.text,
+      body: this.body,
       tags: this.tags,
       publishedDate: this.publishedDate,
       user: this.user,

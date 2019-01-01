@@ -7,12 +7,10 @@ const PostsControllers = require('controllers/posts');
 const passportJWT = passport.authenticate('jwt', { session: false });
 
 
-/*
-  POST /api/posts
-  { title, body, tags }
-*/
 router.route('/')
   .post(passportJWT, validateBody(schemas.postSchema), PostsControllers.createPost);
 
+router.route('/')
+  .get(PostsControllers.PostsList);
 
 module.exports = router;
