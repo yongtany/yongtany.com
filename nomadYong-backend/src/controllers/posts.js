@@ -80,6 +80,20 @@ module.exports = {
     } catch(e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
+  },
+  deletePost: async (req, res) => {
+    try{
+      const post = await Post.findById(req.params.id);
+
+      if (!post.user.equals(req.user._id)) {
+        return res.sendStatus(HTTPStatus.UNAUTHORIZED);
+      }
+
+      await post.remove();
+      return res.sendStatus(HTTPStatus.OK);
+    } catch(e) {
+      return res.status(HTTPStatus.BAD_REQUEST).json(e);
+    }
   }
 
 

@@ -17,6 +17,9 @@ router.route('/:id')
   .get(PostsControllers.getPostById);
 
 router.route('/:id')
-  .patch(passportJWT, PostsControllers.updatePost)
+  .patch(passportJWT, PostsControllers.updatePost);
+
+router.route('/:id')
+  .delete(passportJWT, PostsControllers.deletePost);
 
 module.exports = router;
