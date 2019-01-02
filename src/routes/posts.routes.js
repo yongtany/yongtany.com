@@ -11,6 +11,9 @@ router.route('/')
   .post(passportJWT, validateBody(schemas.postSchema), PostsControllers.createPost);
 
 router.route('/')
-  .get(PostsControllers.PostsList);
+  .get(PostsControllers.getPostList);
+
+router.route('/:id')
+  .get(PostsControllers.getPostById);
 
 module.exports = router;

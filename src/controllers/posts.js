@@ -15,7 +15,7 @@ module.exports = {
     }
   },
 
-  PostsList : async (req, res) => {
+  getPostList : async (req, res) => {
     // page가 주어지지 않았다면 1로 간주
     // query는 문자열 형태로 받아 오므로 숫자로 변환
     const page = parseInt(req.query.page || 1, 10);
@@ -35,6 +35,7 @@ module.exports = {
       const posts = await Post.find(query)
         .sort({ _id: -1 })
         .limit(10)
+        .populate('user')
         .skip((page - 1) * 10)
         .lean()
         .exec();
@@ -51,5 +52,14 @@ module.exports = {
     } catch (e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
+  },
+  getPostById: async (req, res) => {
+    try{
+      const post = await Post.findById(req.params.id).populate('user');
+      return res.status(HTTPStatus.OK).json(post);
+    } catch(e) {
+      return res.status(HTTPStatus.BAD_REQUEST).json(e);
+    }
   }
+
 }

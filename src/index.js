@@ -18,5 +18,16 @@ app.use('/posts', require('routes/posts.routes'));
 
 // Start the server
 const port = process.env.PORT || 3000;
-app.listen(port);
+
+app.listen(port, err => {
+  if(err) {
+    throw err;
+  } else {
+    console.log(`
+        --------------------------------
+        Server runnging on port: ${port}
+        --------------------------------
+        `);
+  }
+});
 console.log(`Server listening at ${port}`);
