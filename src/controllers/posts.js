@@ -2,8 +2,6 @@ const HTTPStatus = require('http-status');
 
 const Post = require('models/post');
 
-const { ObjectId } = require('mongoose').Types;
-
 module.exports = {
   createPost : async (req, res) => {
     try {
@@ -27,8 +25,7 @@ module.exports = {
 
     // 잘못된 페이지가 주어졌다면 에러
     if (page < 1) {
-      res.status = 400;
-      return;
+      return res.status(HTTPStatus.BAD_REQUEST).json()
     }
 
     try {
@@ -56,10 +53,34 @@ module.exports = {
   getPostById: async (req, res) => {
     try{
       const post = await Post.findById(req.params.id).populate('user');
+
+      if(!post) {
+        return res.status(HTTPStatus.NOT_FOUND).json();
+      }
       return res.status(HTTPStatus.OK).json(post);
     } catch(e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
+  },
+
+  updatePost: async (req, res) => {
+    try {
+      const post = await Post.findById(req.params.id);
+
+      if (!post.user.equals(req.user._id)) {
+        return res.sendStatus(HTTPStatus.UNAUTHORIZED);
+      }
+
+      Object.keys(req.body).forEach(key => {
+        post[key] = req.body[key];
+      });
+
+      return res.status(HTTPStatus.OK).json(await post.save());
+
+    } catch(e) {
+      return res.status(HTTPStatus.BAD_REQUEST).json(e);
+    }
   }
+
 
 }

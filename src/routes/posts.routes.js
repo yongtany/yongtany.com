@@ -16,4 +16,7 @@ router.route('/')
 router.route('/:id')
   .get(PostsControllers.getPostById);
 
+router.route('/:id')
+  .patch(passportJWT, PostsControllers.updatePost)
+
 module.exports = router;
