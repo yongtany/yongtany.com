@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import configure from './store/configure';
 
 import registerServiceWorker from './registerServiceWorker';
+import 'styles/base.scss';
 
 const store = configure();
 
