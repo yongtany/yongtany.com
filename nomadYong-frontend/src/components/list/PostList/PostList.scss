@@ -1,5 +1,13 @@
 @import 'styles/utils.scss';
 
-.post-item + .post-item {
-  border-top: 1px solid $oc-gray-3;
+.post-list{
+  width: 75%;
+
+  border-right: 1px solid $oc-gray-5;
+
+  .post-item + .post-item {
+    border-top: 1 solid $oc-gray-3;
+  }
 }
+
+
