@@ -1,11 +1,12 @@
+@import 'styles/utils.scss';
+
 .navigation {
   width: 100%;
-  @include boxBorder(no);
   display: flex;
   justify-content: center;
   box-sizing: border-box;
   .inner {
-    max-width: $max-page-width + 80px;
+    max-width: 1000px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,11 +18,7 @@
       justify-content: center;
       align-items: center;
       width: 33%;
-      &:nth-child(2) {
-        @include breakpoint("phone") {
-          display: none;
-        }
-      }
+
       &:first-child {
         justify-content: flex-start;
       }
@@ -40,20 +37,21 @@
         border: solid 1px #dbdbdb;
         border-radius: 3px;
         background-color: #fafafa;
-        font-size: $normal-font-size;
+        font-size: 1rem;
         font-weight: 300;
         margin-right: 15px;
         &::placeholder {
-          color: $dark-grey;
+          color: $oc-gray-4;
         }
         &:focus {
           outline: none;
           background-color: white;
         }
       }
-      .nav-icon {
-        margin-left: 2rem;
-        cursor: pointer;
+
+      .right {
+        // 오른쪽 내용
+        margin-left: auto;
       }
     }
   }

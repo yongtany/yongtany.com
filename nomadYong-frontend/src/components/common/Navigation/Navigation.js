@@ -2,10 +2,8 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from "react-router-dom";
 import styles from './Navigation.scss';
+import Button from 'components/common/Button';
 
-import IosCompass from 'react-ionicons/lib/IosCompassOutline';
-import IosPersonOutline from 'react-ionicons/lib/IosPersonOutline';
-import IosBookOutline from 'react-ionicons/lib/IosBookOutline';
 
 const cx = classNames.bind(styles);
 
@@ -33,20 +31,18 @@ const Navigation = (props) => (
                   </form>
               </div>
               <div className={cx('column')}>
-                  <div className={cx('navIcon')}>
-                      <Link to="/explore">
-                        <IosCompass fontSize="2rem" />
-                      </Link>
+                  <div className={cx('right')}>
+                    <Button theme="outline">Explore</Button>
                   </div>
-                  <div className={cx('navIcon')}>
+                  <div className={cx('right')}>
                     <Link to="/blog">
-                      <IosBookOutline fontSize="2rem" />
+                      <Button theme="outline" to="/post">Blog</Button>
                     </Link>
                   </div>
-                  <div className={cx('navIcon')}>
-                      <Link to="/profile">
-                          <IosPersonOutline fontSize="2rem" />
-                      </Link>
+                  <div className={cx('right')}>
+                    <Link to="/profile">
+                      <Button theme="outline" to="/auth">Login</Button>
+                    </Link>
                   </div>
               </div>
           </div>

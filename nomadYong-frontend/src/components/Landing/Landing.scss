@@ -1,0 +1,43 @@
+@import 'styles/base.scss';
+
+
+.landing {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 10rem;
+  background-image: url('images/background.jpeg');
+  opacity: 0.8;
+
+    // Heading
+    h1, h2, h3 {
+      margin: 0;
+      font-weight: 400;
+
+      &.lg-heading {
+          font-size: 6rem;      // 1rem = 1*16px
+      }
+
+      &.sm-heading {
+          margin-bottom: 2rem;
+          padding: 0.2rem 1rem;
+      }
+    }
+
+    .text-secondary {
+      color: gray;
+    }
+
+    .icons {
+        margin-top: 1rem;
+
+        a {
+            padding: 0.4rem;
+
+            &:hover {
+                color: gray;
+
+            }
+        }
+    }
+
+}
