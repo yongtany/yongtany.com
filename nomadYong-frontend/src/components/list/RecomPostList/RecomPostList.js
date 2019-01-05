@@ -3,6 +3,8 @@ import React from 'react';
 import styles from './RecomPostList.scss';
 import classNames from 'classnames/bind';
 
+import Tag from 'components/common/Tag';
+
 
 const cx = classNames.bind(styles);
 
@@ -18,9 +20,9 @@ const RecomPostItem = () => (
         <span className={cx('title')}>Title</span>
         <span className={cx('author')}>By author</span>
         <div className={cx('tags')}>
-          <a to="#">#태그</a>
-          <a to="#">#태그</a>
-          <a to="#">#태그</a>
+          <Tag to={'/'}>#태그</Tag>
+          <Tag to={'/'}>#태그</Tag>
+          <Tag to={'/'}>#태그</Tag>
         </div>
       </div>
     </div>

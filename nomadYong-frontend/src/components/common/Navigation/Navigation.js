@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import { Link } from "react-router-dom";
 import styles from './Navigation.scss';
-import Button from 'components/common/Button';
 
 
 const cx = classNames.bind(styles);
@@ -32,16 +31,18 @@ const Navigation = (props) => (
               </div>
               <div className={cx('column')}>
                   <div className={cx('right')}>
-                    <Button theme="outline">Explore</Button>
+                    <Link to="/explore">
+                      Explore
+                    </Link>
                   </div>
                   <div className={cx('right')}>
                     <Link to="/blog">
-                      <Button theme="outline" to="/post">Blog</Button>
+                      Blog
                     </Link>
                   </div>
                   <div className={cx('right')}>
                     <Link to="/profile">
-                      <Button theme="outline" to="/auth">Login</Button>
+                      Profile
                     </Link>
                   </div>
               </div>

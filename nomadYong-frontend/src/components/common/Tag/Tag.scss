@@ -1,0 +1,21 @@
+@import 'styles/utils.scss';
+
+.tag {
+    background-color: $oc-gray-3;
+    font-family: "Nunito Sans", sans-serif;
+    color: $oc-gray-6;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1;
+    border-radius: 0px;
+    padding: 6px 10px 5px;
+      &:hover {
+          background-color: $oc-gray-6;
+          color: $oc-gray-3;
+    }
+}
+
+.tag + .tag {
+  margin-left : 0.4rem;
+}

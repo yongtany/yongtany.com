@@ -16,16 +16,16 @@ const Landing = () => (
         Univ. student
     </h2>
     <div className={cx('icons')}>
-        <Link to="http://dev-yong.tistory.com/">
+        <Link to="http://dev-yong.tistory.com/" className={cx('icon')}>
             <i className={cx('fab fa-blogger fa-2x')}></i>
         </Link>
-        <Link to="https://www.facebook.com/profile.php?id=100000467400701">
+        <Link to="https://www.facebook.com/profile.php?id=100000467400701" className={cx('icon')}>
             <i className={cx('fab fa-facebook fa-2x')}></i>
         </Link>
-        <Link to="https://www.instagram.com/yongn14/">
+        <Link to="https://www.instagram.com/yongn14/" className={cx('icon')}>
             <i className={cx('fab fa-instagram fa-2x')}></i>
         </Link>
-        <Link to="https://github.com/nomad-yong">
+        <Link to="https://github.com/nomad-yong" className={cx('icon')}>
             <i className={cx('fab fa-github fa-2x')}></i>
         </Link>
     </div>
