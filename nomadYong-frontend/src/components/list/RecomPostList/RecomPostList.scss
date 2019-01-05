@@ -5,7 +5,16 @@
   width: 25%;
   margin-left: 3rem;
 
+  .label {
+    font-size: 1.2rem;
+    font-weight: 100;
+    align-content: center;
+    color: $oc-gray-6;
+    margin-bottom: 3rem;
+  }
+
   .recompost-item {
+    margin-top: 2rem;
     background: white;
     height: 15rem;
     border-radius: 8px;
@@ -37,13 +46,21 @@
         }
 
         .tags {
-          font-size: 0.85rem;
-          color: $oc-blue-6;
           margin-top: 1rem;
+
           a {
+            background-color: $oc-gray-3;
+            font-family: "Nunito Sans", sans-serif;
+            color: $oc-gray-6;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            line-height: 1;
+            border-radius: 0px;
+            padding: 6px 10px 5px;
               &:hover {
-                  color: $oc-blue-5;
-                  text-decoration: underline;
+                  background-color: $oc-gray-6;
+                  color: $oc-gray-3;
               }
           }
           a + a {
@@ -60,11 +77,8 @@
   }
 
 
-
-
-
   .recompost-item + .recompost-item {
-    border-top: 1px solid $oc-gray-3;
+
     margin-top: 3rem;
   }
 }

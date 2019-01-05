@@ -1,0 +1,57 @@
+@import 'styles/utils.scss';
+
+.post-info {
+  .info {
+    padding: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: white;
+    @include material-shadow(4, 0.5);
+    transform: translateY(2.3rem);
+    margin: 0 auto;
+    min-height: 10rem;
+
+    .title {
+      font-size: 2rem;
+      font-weight: 200;
+      word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
+    }
+
+    .sub {
+      font-size: 1rem;
+      word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
+      text-align: right;
+      opacity: 0.5;
+      font-style: italic;
+      margin-top: 1rem;
+    }
+
+    .tags {
+      margin-top: 1rem;
+
+      a {
+        background-color: $oc-gray-3;
+        font-family: "Nunito Sans", sans-serif;
+        color: $oc-gray-6;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 1;
+        border-radius: 0px;
+        padding: 6px 10px 5px;
+          &:hover {
+              background-color: $oc-gray-6;
+              color: $oc-gray-3;
+          }
+      }
+      a + a {
+          margin-left: 0.4rem;
+      }
+    }
+
+    // 해상도에 따라 다른 width를 설정
+    width: 1024px;
+    @include media("<large") { width : 768px; }
+    @include media("<medium") { width: calc(100% - 2rem); }
+  }
+}

@@ -29,6 +29,8 @@ const RecomPostItem = () => (
 
 const RecomPostList = () => (
   <div className={cx('recompost-list')}>
+    <span className={cx('label')}>MOST LIKED POSTS</span>
+    <br />
     <RecomPostItem />
     <RecomPostItem />
     <RecomPostItem />

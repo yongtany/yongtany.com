@@ -4,15 +4,17 @@ import React from 'react';
 import styles from './PostItem.scss';
 import classNames from 'classnames/bind';
 
+import { Link } from 'react-router-dom';
+
 
 const cx = classNames.bind(styles);
-
+const url='https://picsum.photos/740/420/?random';
 
 const PostItem = () => (
   <div className={cx('post-item')}>
-    <div className={cx('photo')} />
+    <img src={url} alt={'logo'} />
     <div className={cx('content')}>
-      <span className={cx('title')}>Title</span>
+      <Link to={`/post/info`}><span className={cx('title')}>Title</span></Link>
       <p className={cx('sub')}>
         <span className={cx('published')}>By nomadyong</span> | <span className={cx('created')}>On 2019-01-04</span>
       </p>

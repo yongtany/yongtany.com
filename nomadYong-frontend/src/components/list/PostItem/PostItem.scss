@@ -10,7 +10,7 @@
   margin-top: 2rem;
   margin-right: 3rem;
 
-  .photo {
+  img {
     background-position: center center;
     background-image: url('https://picsum.photos/740/420/?random');
     background-color: rgb(219, 224, 230);
@@ -50,13 +50,21 @@
     }
 
     .tags {
-      font-size: 0.85rem;
-      color: $oc-blue-6;
       margin-top: 1rem;
+
       a {
+        background-color: $oc-gray-3;
+        font-family: "Nunito Sans", sans-serif;
+        color: $oc-gray-6;
+        font-weight: 600;
+        font-size: 12px;
+        text-transform: uppercase;
+        line-height: 1;
+        border-radius: 0px;
+        padding: 6px 10px 5px;
           &:hover {
-              color: $oc-blue-5;
-              text-decoration: underline;
+              background-color: $oc-gray-6;
+              color: $oc-gray-3;
           }
       }
       a + a {

@@ -1,0 +1,20 @@
+@import 'styles/utils.scss';
+
+.post-body {
+  .paper {
+    padding: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: white;
+    @include material-shadow(4, 0.5);
+    margin: 0 auto;
+    min-height: 10rem;
+    margin-top: 5rem;
+
+
+    // 해상도에 따라 다른 width를 설정
+    width: 1024px;
+    @include media("<large") { width : 768px; }
+    @include media("<medium") { width: calc(100% - 2rem); }
+  }
+}

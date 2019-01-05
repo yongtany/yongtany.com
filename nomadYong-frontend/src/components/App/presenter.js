@@ -14,10 +14,10 @@ const App = () => {
         <div>
             <Switch>
                 <Route exact path="/" component={HomePage} />
-                <Route exact path="/post" component={ListPage} />
+                <Route path="/post" component={ListPage} />
                 <Route path="/post/:page" component={ListPage} />
                 <Route path="/tag/:tag/:page?" component={ListPage} />
-                <Route path="/post/:id" component={PostPage} />
+                <Route path="/info" component={PostPage} />
                 <Route path="/editor" component={EditorPage} />
                 <Route path="/profile" component={ProfilePage} />
                 <Route component={NotFoundPage} />
