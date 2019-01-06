@@ -32,10 +32,14 @@
 
     .title {
       font-size: 24px;
-      font-weight: 900;
+      font-weight: 200;
       color: #1F2126;
       margin-bottom: 15px;
       display: block;
+
+      &:hover {
+        text-decoration: darkgrey underline;
+      }
     }
 
     .sub {

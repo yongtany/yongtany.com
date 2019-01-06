@@ -36,7 +36,7 @@ const Navigation = (props) => (
                     </Link>
                   </div>
                   <div className={cx('right')}>
-                    <Link to="/blog">
+                    <Link to="/post">
                       Blog
                     </Link>
                   </div>
