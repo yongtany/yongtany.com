@@ -54,6 +54,7 @@ userSchema.methods = {
   toJSON() {
     return {
       _id: this._id,
+      email: this.email,
       userName: this.userName,
       profile_image: this.profile_image
     };

@@ -26,14 +26,19 @@ class Post extends Component {
 
     const { title, body, publishedDate, tags } = post.toJS();
 
-    const user = post.toJS();
+    const userName = post.getIn(['user', 'userName']);
 
-    console.log(user._id);
-
+    const profile_image = post.getIn(['user', 'profile_image']);
 
     return (
       <div>
-        <PostInfo title={title} publishedDate={publishedDate} tags={tags} id={user._id} />
+        <PostInfo
+          title={title}
+          publishedDate={publishedDate}
+          tags={tags}
+          userName={userName}
+          profile_image={profile_image}
+        />
         <PostBody body={body}/>
       </div>
     )
