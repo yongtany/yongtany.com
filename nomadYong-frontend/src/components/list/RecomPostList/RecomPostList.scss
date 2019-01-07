@@ -27,6 +27,7 @@
         background-size: cover;
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
+        max-width: 100%;
       }
 
       .content {
@@ -36,7 +37,7 @@
           font-size: 1.3rem;
           font-weight: 900;
           color: #1F2126;
-          margin-bottom: 0.5rem;
+
           display: block;
         }
 
@@ -45,10 +46,6 @@
           font-weight: 150;
         }
 
-        .tags {
-          margin-top: 1rem;
-
-        }
       }
       &:hover {
         // 마우스 호버할 때 배경색 변경

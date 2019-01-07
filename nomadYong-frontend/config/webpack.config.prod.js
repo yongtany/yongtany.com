@@ -228,9 +228,9 @@ module.exports = {
                       options: {
                         importLoaders: 1,
                         minimize: true,
-                        sourceMap: true,
-                        modules: true,
-                        localIdentName: '[name]__[local]__[hash:base64:5]'
+                        sourceMap: shouldUseSourceMap,
+                        localIdentName: '[name]__[local]___[hash:base64:5]',
+                        modules: 1,
                       },
                     },
                     {
@@ -256,7 +256,7 @@ module.exports = {
                     {
                       loader: require.resolve('sass-loader'),
                       options: {
-                         // 나중에 입력
+                        includePaths: [paths.globalStyles]
                       }
                     }
                   ],

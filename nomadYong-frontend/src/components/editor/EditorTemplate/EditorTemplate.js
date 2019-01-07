@@ -28,12 +28,13 @@ class EditorTemplate extends Component {
     window.addEventListener('mouseup', this.handleMouseUp);
   }
 
+
   render() {
     const { header, editor, preview } = this.props;
     const { leftPercentage } = this.state;
     const { handleSeparatorMouseDown } = this;
 
-    // 각 영역에 flex 값 적용
+    // 각 영영에 flex 값 적용
     const leftStyle = {
       flex: leftPercentage
     };
@@ -45,6 +46,7 @@ class EditorTemplate extends Component {
     const separatorStyle = {
       left: `${leftPercentage * 100}%`
     };
+
 
     return (
       <div className={cx('editor-template')}>

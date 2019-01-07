@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.6",
+    "axios": "^0.18.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -15,7 +16,7 @@
     "classnames": "^2.2.6",
     "codemirror": "^5.42.2",
     "css-loader": "0.28.7",
-    "dotenv": "4.0.0",
+    "dotenv": "4.s0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "4.10.0",
     "eslint-config-react-app": "^2.1.0",
@@ -32,13 +33,16 @@
     "include-media": "^1.4.9",
     "jest": "20.0.4",
     "marked": "^0.6.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.10.0",
     "object-assign": "4.1.1",
     "open-color": "^1.6.3",
-    "postcss-flexbugs-fixes": "3.2.0",
-    "postcss-loader": "2.0.8",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.0.6",
+    "postcss-safe-parser": "4.0.1",
     "prismjs": "^1.15.0",
     "promise": "8.0.1",
+    "query-string": "^6.2.0",
     "raf": "3.4.0",
     "react": "^16.7.0",
     "react-dev-utils": "^5.0.2",
@@ -50,7 +54,6 @@
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
     "redux-pender": "^2.0.9",
-    "reset-css": "^4.0.1",
     "resolve": "1.6.0",
     "sass-loader": "^7.1.0",
     "style-loader": "0.19.0",
@@ -107,5 +110,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "proxy" : "http://localhost:5000"
 }

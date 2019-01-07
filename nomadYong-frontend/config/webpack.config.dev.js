@@ -164,8 +164,6 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
-                  modules: true,
-                  localIdentName: '[path][name]__[local]--[hash:base64:5]'
                 },
               },
               {
@@ -190,11 +188,6 @@ module.exports = {
               },
             ],
           },
-          // "file" loader makes sure those assets get served by WebpackDevServer.
-          // When you `import` an asset, you get its (virtual) filename.
-          // In production, they would get copied to the `build` folder.
-          // This loader doesn't use a "test" so it will catch all modules
-          // that fall through the other loaders.
           {
             test: /\.scss$/,
             use: [
@@ -203,9 +196,8 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
-                  modules: true,
-                  localIdentName: '[name]__[local]__[hash:base64:5]',
-                  camelCase : "dashes"
+                  localIdentName: '[name]__[local]___[hash:base64:5]',
+                  modules: 1,
                 },
               },
               {
@@ -231,11 +223,16 @@ module.exports = {
               {
                 loader: require.resolve('sass-loader'),
                 options: {
-
+                  includePaths: [paths.globalStyles]
                 }
               }
             ],
           },
+          // "file" loader makes sure those assets get served by WebpackDevServer.
+          // When you `import` an asset, you get its (virtual) filename.
+          // In production, they would get copied to the `build` folder.
+          // This loader doesn't use a "test" so it will catch all modules
+          // that fall through the other loaders.
           {
             // Exclude `js` files to keep "css" loader working as it injects
             // its runtime that would otherwise processed through "file" loader.
