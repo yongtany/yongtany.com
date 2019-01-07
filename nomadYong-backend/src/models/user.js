@@ -79,6 +79,14 @@ userSchema.methods = {
   isValidPassword(password) {
     return bcrypt.compare(password, this.local.password);
   },
+  toJSON() {
+    return {
+      _id: this._id,
+      userName: this.local.userName || this.google.userName || this.facebook.userName,
+      profile_image: this.local.profile_image || this.google.profile_image || this.facebook.profile_image,
+    };
+  },
+
 }
 
 

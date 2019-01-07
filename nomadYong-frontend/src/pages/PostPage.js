@@ -1,13 +1,14 @@
 import React from 'react';
 import PageTemplate from 'components/common/PageTemplate';
-import PostContainer from '../containers/post/PostContainer';
+import Post from '../containers/post/Post';
 
 
-const PostPage = () => {
+const PostPage = ({match}) => {
+  const { id } = match.params;
   return (
     <div>
       <PageTemplate>
-        <PostContainer />
+        <Post id={id} />
       </PageTemplate>
     </div>
   );

@@ -5,8 +5,16 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const Tag = (prop) => (
-  <Link to={prop.to} className={cx('tag')}>#tag</Link>
-);
+const Tag = (props) => {
+  const tag = props.tag;
+  return (
+    <Link
+    to={props.to}
+    className={cx('tag')}
+    >
+    {tag}
+    </Link>
+  )
+};
 
 export default Tag;

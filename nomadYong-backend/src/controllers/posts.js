@@ -30,9 +30,9 @@ module.exports = {
 
     try {
       const posts = await Post.find(query)
+        .populate('user')
         .sort({ _id: -1 })
         .limit(10)
-        .populate('user')
         .skip((page - 1) * 10)
         .lean()
         .exec();
