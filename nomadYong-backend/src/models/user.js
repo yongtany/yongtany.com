@@ -2,14 +2,10 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
 
+// const PROVIDER_ENUM = ['LOCAL', 'FACEBOOK', 'GOOGLE'];
+
 // Create a schema
 const userSchema = Schema({
-  method: {
-    type: String,
-    enum: ['local', 'google', 'facebook'],
-    required: true
-  },
-  local: {
     email: {
       type: String,
       lowercase: true
@@ -22,43 +18,19 @@ const userSchema = Schema({
     },
     profile_image: {
       type: String
-    }
-  },
-  google: {
-    id: {
-      type: String
     },
-    email: {
+    provider: {
       type: String,
-      lowercase: true
+      required: true
     },
-    userName: {
-      type: String,
-    },
-    profile_image: {
+    uid: {
       type: String
     }
-  },
-  facebook: {
-    id: {
-      type: String
-    },
-    email: {
-      type: String,
-      lowercase: true
-    },
-    userName: {
-      type: String,
-    },
-    profile_image: {
-      type: String
-    }
-  }
 });
 
 userSchema.pre('save', async function(next) {
   try {
-    if(this.method !== 'local'){
+    if(this.provider !== 'LOCAL'){
       next();
     }
 
@@ -66,9 +38,9 @@ userSchema.pre('save', async function(next) {
     const salt = await bcrypt.genSalt(10);
 
     // Generate a password hash (salt + hash)
-    const passwordHash = await bcrypt.hash(this.local.password, salt);
+    const passwordHash = await bcrypt.hash(this.password, salt);
     // Re-assign hashed version over original, plain text password
-    this.local.password = passwordHash;
+    this.password = passwordHash;
     next();
   } catch (error) {
     next(error);
@@ -77,13 +49,13 @@ userSchema.pre('save', async function(next) {
 
 userSchema.methods = {
   isValidPassword(password) {
-    return bcrypt.compare(password, this.local.password);
+    return bcrypt.compare(password, this.password);
   },
   toJSON() {
     return {
       _id: this._id,
-      userName: this.local.userName || this.google.userName || this.facebook.userName,
-      profile_image: this.local.profile_image || this.google.profile_image || this.facebook.profile_image,
+      userName: this.userName,
+      profile_image: this.profile_image
     };
   },
 

@@ -16,20 +16,18 @@ module.exports = {
       const { email, password, userName, profile_image } = req.value.body;
 
       // Check if there is a user with the same email
-      const foundUser = await User.findOne({ "local.email": email });
+      const foundUser = await User.findOne({"email": email });
       if (foundUser) {
         return res.status(403).json({ error: 'Email is already in use'});
       }
 
       // Create a new user
       const newUser = new User({
-        method: 'local',
-        local: {
           email: email,
           password: password,
           userName: userName,
-          profile_image: profile_image
-        }
+          profile_image: profile_image,
+          provider: 'LOCAL'
       });
 
       await newUser.save();
@@ -43,19 +41,19 @@ module.exports = {
     signIn: async(req, res, next) => {
       // Generate token
       const token = signToken(req.user);
-      res.status(200).json({user: req.user, token: token});
+      res.status(200).json({user: req.user.toJSON(), token: token});
     },
 
     googleOAuth: async (req, res, next) => {
       // Generate token
       const token = signToken(req.user);
-      res.status(200).json({user: req.user, token: token});
+      res.status(200).json({user: req.user.toJSON(), token: token});
     },
 
     facebookOAuth: async (req, res, next) => {
       // Generate token
       const token = signToken(req.user);
-      res.status(200).json({user: req.user, token: token});
+      res.status(200).json({user: req.user.toJSON(), token: token});
     },
 
     secret: async(req, res, next) => {

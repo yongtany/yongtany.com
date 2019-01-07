@@ -27,4 +27,4 @@ export default handleActions({
       return state.set('post', fromJS(post));
     }
   })
-}, initialState)
+}, initialState);

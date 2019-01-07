@@ -30,10 +30,10 @@ module.exports = {
 
     try {
       const posts = await Post.find(query)
-        .populate('user')
         .sort({ _id: -1 })
         .limit(10)
         .skip((page - 1) * 10)
+        .populate('user')
         .lean()
         .exec();
       const postCount = await Post.count(query).exec();
@@ -95,6 +95,4 @@ module.exports = {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
   }
-
-
 }

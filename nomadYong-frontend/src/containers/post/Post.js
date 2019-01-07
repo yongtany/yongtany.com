@@ -24,12 +24,16 @@ class Post extends Component {
 
     if(loading) return null; // 로딩 중일 때는 아무것도 보여주지 않음
 
-    const { title, body, publishedDate, tags, user } = post.toJS();
+    const { title, body, publishedDate, tags } = post.toJS();
+
+    const user = post.toJS();
+
+    console.log(user._id);
 
 
     return (
       <div>
-        <PostInfo title={title} publishedDate={publishedDate} tags={tags} />
+        <PostInfo title={title} publishedDate={publishedDate} tags={tags} id={user._id} />
         <PostBody body={body}/>
       </div>
     )

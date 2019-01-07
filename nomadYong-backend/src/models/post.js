@@ -27,7 +27,7 @@ postSchema.methods = {
       body: this.body,
       tags: this.tags,
       publishedDate: this.publishedDate,
-      user: this.user.toJSON(),
+      user: this.user,
       favoriteCount: this.favoriteCount,
     };
   },

@@ -38,19 +38,17 @@ passport.use('facebookToken', new FacebookTokenStrategy({
     console.log('accessToken', accessToken);
     console.log('refreshToken', refreshToken);
 
-    const existingUser = await User.findOne({ "facebook.id": profile.id });
+    const existingUser = await User.findOne({ "uid": profile.id });
     if(existingUser) {
       return done(null, existingUser);
     }
 
     const newUser = new User({
-      method: 'facebook',
-      facebook: {
-        id: profile.id,
         email: profile.emails[0].value,
         userName: profile.displayName,
-        profile_image: profile.photos[0].value
-      }
+        profile_image: profile.photos[0].value,
+        provier: 'FACEBOOK',
+        uid: profile.id,
     });
 
     await newUser.save();
@@ -71,20 +69,18 @@ passport.use('googleToken', new GooglePlusTokenStrategy({
     console.log('profile', profile);
 
     // Check whether this current user exists in our DB
-    const existingUser = await User.findOne({ "google.id": profile.id});
+    const existingUser = await User.findOne({ "uid": profile.id});
     if(existingUser) {
       return done(null, existingUser);
     }
 
     // If new account
     const newUser = new User({
-      method: 'google',
-      google: {
-        id: profile.id,
         email: profile.emails[0].value,
         userName: profile.displayName,
-        profile_image: profile.photos[0].value
-      }
+        profile_image: profile.photos[0].value,
+        provider: 'GOOGLE',
+        uid: profile.id,
     });
 
     await newUser.save();
@@ -101,7 +97,7 @@ passport.use(new LocalStrategy({
 }, async (email, password, done) => {
   try {
     // Find the user given the email
-    const user = await User.findOne({ "local.email": email });
+    const user = await User.findOne({ "email": email });
 
     // If not, handle it
     if(!user) {
