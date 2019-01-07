@@ -20,9 +20,9 @@ const RecomPostItem = () => (
         <span className={cx('title')}>Title</span>
         <span className={cx('author')}>By author</span>
         <div className={cx('tags')}>
-          <Tag to={'/'}>#태그</Tag>
-          <Tag to={'/'}>#태그</Tag>
-          <Tag to={'/'}>#태그</Tag>
+          {/* <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
+          <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
+          <Tag key={''} to={`/tag/${''}`} tag={'#tag'} /> */}
         </div>
       </div>
     </div>

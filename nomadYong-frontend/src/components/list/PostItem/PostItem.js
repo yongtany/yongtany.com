@@ -3,30 +3,35 @@
 import React from 'react';
 import styles from './PostItem.scss';
 import classNames from 'classnames/bind';
-
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+import removeMd from 'remove-markdown';
 
 import Tag from 'components/common/Tag';
 
 const cx = classNames.bind(styles);
 const url='https://picsum.photos/740/420/?random';
 
-const PostItem = () => (
-  <div className={cx('post-item')}>
-    <img src={url} alt={'logo'} />
-    <div className={cx('content')}>
-      <Link to={`/post/info`}><span className={cx('title')}>Title</span></Link>
-      <p className={cx('sub')}>
-        <span className={cx('published')}>By nomadyong</span> | <span className={cx('created')}>On 2019-01-04</span>
-      </p>
-      <p className={cx('text')}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-      <div className={cx('tags')}>
-        <Tag to={'/'}>#태그</Tag>
-        <Tag to={'/'}>#태그</Tag>
-        <Tag to={'/'}>#태그</Tag>
+const PostItem = ({title, body, publishedDate, tags, id}) => {
+  const tagList = tags.map(
+    tag => <Tag key={tag} to={`/tag/${tag}`} tag={tag} />
+  );
+
+  return (
+    <div className={cx('post-item')}>
+      <img src={url} alt={'logo'} />
+      <div className={cx('content')}>
+        <Link to={`/post/${id}`}><span className={cx('title')}>{title}</span></Link>
+        <div className={cx('sub')}>
+          <span className={cx('published')}>By nomadyong</span> | <span className={cx('created')}>{moment(publishedDate).format('ll')}</span>
+        </div>
+        <p className={cx('text')}>{removeMd(body)}</p>
+        <div className={cx('tags')}>
+          {tagList}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default PostItem;
