@@ -39,7 +39,7 @@ module.exports = {
       const postCount = await Post.count(query).exec();
       const limitBodyLength = post => ({
         ...post,
-        body: post.body.length < 350 ? post.body : `${post.body.slice(0, 350)}...`
+        body: post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`
       });
       // 마지막 페이지 알려 주기
       // res.set은 response header를 설정해줍니다.

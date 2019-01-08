@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-
 import React from 'react';
 import styles from './PostItem.scss';
 import classNames from 'classnames/bind';
@@ -10,7 +8,6 @@ import removeMd from 'remove-markdown';
 import Tag from 'components/common/Tag';
 
 const cx = classNames.bind(styles);
-const url='https://picsum.photos/740/420/?random';
 
 const PostItem = ({title, body, publishedDate, userName, tags, id}) => {
   const tagList = tags.map(
@@ -19,9 +16,11 @@ const PostItem = ({title, body, publishedDate, userName, tags, id}) => {
 
   return (
     <div className={cx('post-item')}>
-      <img src={url} alt={'logo'} />
+      <div className={cx('image')}>
+        <h4 className={cx('category')}>Develop</h4>
+      </div>
       <div className={cx('content')}>
-        <Link to={`/post/${id}`}><span className={cx('title')}>{title}</span></Link>
+        <Link to={`/post/${id}`}><h2 className={cx('title')}>{title}</h2></Link>
         <div className={cx('sub')}>
           <span className={cx('published')}>{userName}</span> | <span className={cx('created')}>{moment(publishedDate).format('ll')}</span>
         </div>

@@ -16,6 +16,11 @@
   .post-item + .post-item {
     border-top: 1 solid $oc-gray-3;
   }
+
+  @include media("<large") {
+    border-right: none;
+  }
+
 }
 
 

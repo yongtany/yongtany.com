@@ -15,4 +15,8 @@
         color: $oc-gray-6;
         flex: 1; // 남은 공간을 다 차지
     }
+
+    @include media("<medium") {
+      width: 100%
+    }
 }
