@@ -12,7 +12,7 @@ const Tag = (props) => {
     to={props.to}
     className={cx('tag')}
     >
-    {tag}
+    # {tag}
     </Link>
   )
 };

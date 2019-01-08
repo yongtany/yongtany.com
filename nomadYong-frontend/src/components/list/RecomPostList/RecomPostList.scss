@@ -33,6 +33,11 @@
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
         max-width: 100%;
+
+        @include media("<large") {
+          width: 100%;
+          height: 10rem;
+        }
       }
 
       .content {
@@ -65,12 +70,13 @@
   }
 
   .recompost-item + .recompost-item {
-
     margin-top: 3rem;
   }
 
   @include media("<large") {
-        display: none;
+    width: 70%;
+    margin-top: 3rem;
+    margin-left: 0;
   }
 
 }

@@ -1,8 +1,9 @@
 @import 'styles/utils.scss';
 
 .footer {
-    background: $oc-gray-4;
-    height: 10rem;
+    background: white;
+    height: 5rem;
+    border-top: 1.5px solid $oc-gray-4;
 
     // 내부 내용 가운데 정렬
     display: flex;

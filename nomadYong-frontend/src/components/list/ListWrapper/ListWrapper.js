@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styles from './ListWrapper.scss';
 import classNames from 'classnames/bind';

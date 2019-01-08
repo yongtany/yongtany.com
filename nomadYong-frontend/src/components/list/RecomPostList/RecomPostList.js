@@ -36,7 +36,6 @@ const RecomPostList = () => (
     <RecomPostItem />
     <RecomPostItem />
     <RecomPostItem />
-    <RecomPostItem />
   </div>
 );
 

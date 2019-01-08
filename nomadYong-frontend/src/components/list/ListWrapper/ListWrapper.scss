@@ -12,8 +12,9 @@
     display: flex;
 
 
-    @include media("<medium") {
+    @include media("<large") {
         width: 100%;
-
+        flex-direction: column;
+        align-items: center;
     }
 }

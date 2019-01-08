@@ -7,18 +7,18 @@
     padding-bottom: 0.25rem;
     font-weight: 600;
     font-size: 0.9rem;
-    color: gray;
+    color: white;
     user-select: none; // 드래그 방지
     display: inline-flex;
 
     // default 파란색 버튼
     &.default {
-        background: $oc-blue-6;
+        background: $oc-gray-6;
         &:hover {
-            background: $oc-blue-5;
+            background: $oc-gray-5;
         }
         &:active {
-            background: $oc-blue-6;
+            background: $oc-gray-6;
         }
     }
 

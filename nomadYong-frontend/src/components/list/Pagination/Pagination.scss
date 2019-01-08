@@ -3,7 +3,8 @@
 .pagination {
     margin-top: 3rem;
     width: 75%;
-    margin-left: 2.5rem;
+    margin-left: 5rem;
+
 
     // 한가운에 세로로 정렬
     display: flex;
@@ -17,6 +18,7 @@
     }
 
     @include media("<medium") {
-      width: 100%
+      width: 100%;
+      margin-left: 0
     }
 }

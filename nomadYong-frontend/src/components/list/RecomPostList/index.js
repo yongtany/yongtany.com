@@ -1,1 +1,1 @@
-export { default } from './RecommandPostList';
+export { default } from './RecomPostList';
