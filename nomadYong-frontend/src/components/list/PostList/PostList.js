@@ -12,11 +12,17 @@ const PostList = ({posts, page, lastPage, tag}) => {
   const postList = posts.map(
     (post) => {
       const { _id, title, body, publishedDate, tags } = post.toJS();
+
+      const userName = post.getIn(['user', 'userName']);
+      const profile_image = post.getIn(['user', 'profile_image']);
+
       return (
         <PostItem
           title={title}
           body={body}
           publishedDate={publishedDate}
+          userName={userName}
+          profile_image={profile_image}
           tags={tags}
           key={_id}
           id={_id}

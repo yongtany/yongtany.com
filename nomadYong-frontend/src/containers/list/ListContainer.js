@@ -30,6 +30,8 @@ class ListContainer extends Component {
 
   render() {
     const { loading, posts, page, lastPage, tag } = this.props;
+
+    console.log(posts);
     if(loading) return null; // 로딩 중에는 아무것도 보여주지 않습니다.
     return (
         <PostList posts={posts} page={page} lastPage={lastPage} tag={tag}/>

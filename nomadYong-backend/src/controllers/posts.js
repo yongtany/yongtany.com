@@ -39,13 +39,12 @@ module.exports = {
       const postCount = await Post.count(query).exec();
       const limitBodyLength = post => ({
         ...post,
-        body: post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`
+        body: post.body.length < 350 ? post.body : `${post.body.slice(0, 350)}...`
       });
-      req.body = posts.map(limitBodyLength);
       // 마지막 페이지 알려 주기
       // res.set은 response header를 설정해줍니다.
       res.set('Last-Page', Math.ceil(postCount / 10));
-      return res.status(HTTPStatus.OK).json(posts);
+      return res.status(HTTPStatus.OK).json(posts.map(limitBodyLength));
     } catch (e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
