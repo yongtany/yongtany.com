@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 const Tag = (props) => {
-  const tag = props.tag;
+  const {tag, to} = props;
   return (
     <Link
-    to={props.to}
-    className={cx('tag')}
-    >
+      to={to}
+      className={cx('tag')}
+      >
     # {tag}
     </Link>
   )

@@ -11,18 +11,20 @@ const cx = classNames.bind(styles);
 const url='https://picsum.photos/740/420/?random';
 
 const RecomPostItem = () => (
-  <div className={cx('recompost-item')}>
-    <div className={cx('column')}>
-      <img src={url} alt={'photo'} />
-    </div>
-    <div className={cx('column')}>
-      <div className={cx('content')}>
-        <span className={cx('title')}>Title</span>
-        <span className={cx('author')}>By author</span>
-        <div className={cx('tags')}>
-          {/* <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
-          <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
-          <Tag key={''} to={`/tag/${''}`} tag={'#tag'} /> */}
+  <div className={cx('container')}>
+    <div className={cx('recompost-item')}>
+      <div className={cx('column')}>
+        <img src={url} alt={'photo'} />
+      </div>
+      <div className={cx('column')}>
+        <div className={cx('content')}>
+          <span className={cx('title')}>Title</span>
+          <span className={cx('author')}>By author</span>
+          <div className={cx('tags')}>
+            {/* <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
+            <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
+            <Tag key={''} to={`/tag/${''}`} tag={'#tag'} /> */}
+          </div>
         </div>
       </div>
     </div>
