@@ -13,13 +13,13 @@ const Pagination = ({page, lastPage, tag}) => {
   return (
     <div className={cx('pagination')}>
       <Button disabled={page === 1} to={createPagePath(page -1)}>
-        이전 페이지
+        NEWER
       </Button>
       <div className={cx('number')}>
-        페이지 {page}
+        PAGE {page}
       </div>
       <Button disabled={page===lastPage} to={createPagePath(page+1)}>
-        다음 페이지
+        OLDER
       </Button>
     </div>
   );

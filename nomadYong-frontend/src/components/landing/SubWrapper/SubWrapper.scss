@@ -1,0 +1,13 @@
+@import 'styles/utils.scss';
+
+.sub-wrapper {
+  width: 75%;
+  margin: 0 auto;
+  padding-left: 3rem;
+
+
+
+  @include media("<large") {
+    width: 100%;
+  }
+}
