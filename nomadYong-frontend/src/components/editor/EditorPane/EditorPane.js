@@ -23,6 +23,7 @@ class EditorPane extends Component {
   codeMirror = null // CodeMirror 인스턴스
   cursor = null // 에디터의 텍스트 cursor 위치
 
+
   initializeEditor = () => {
     this.codeMirror = CodeMirror(this.editor, {
       mode: 'markdown',

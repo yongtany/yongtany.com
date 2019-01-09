@@ -1,6 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { HomePage, ListPage, PostPage, EditorPage, NotFoundPage } from 'pages';
+import {
+  HomePage,
+  ListPage,
+  PostPage,
+  EditorPage,
+  NotFoundPage,
+  AuthPage
+} from 'pages';
 
 
 const App = () => {
@@ -13,6 +20,7 @@ const App = () => {
         <Route path="/tag/:tag/:page?" component={ListPage}/>
         <Route path="/post/:id" component={PostPage}/>
         <Route path="/editor" component={EditorPage}/>
+        <Route path="/auth" component={AuthPage}/>
         <Route component={NotFoundPage}/>
       </Switch>
     </div>

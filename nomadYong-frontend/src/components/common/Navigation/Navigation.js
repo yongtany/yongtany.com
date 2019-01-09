@@ -32,7 +32,7 @@ const Navigation = (props) => (
               <div className={cx('column')}>
                   <div className={cx('right')}>
                     <Link to="/explore">
-                      Explore
+                      About
                     </Link>
                   </div>
                   <div className={cx('right')}>
@@ -41,8 +41,8 @@ const Navigation = (props) => (
                     </Link>
                   </div>
                   <div className={cx('right')}>
-                    <Link to="/profile">
-                      Profile
+                    <Link to="/auth">
+                      Login
                     </Link>
                   </div>
               </div>

@@ -21,4 +21,25 @@
   }
 }
 
+@mixin grayButton() {
+  -webkit-appearance: none;
+  border-radius: 3px;
+  background-color: $oc-gray-6;
+  color: white;
+  font-weight: 600;
+  border: 0;
+  font-size: 1rem;
+  line-height: 2rem;
+  cursor: pointer;
+  width: 100%;
+  padding: 2px 9px;
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  &:active {
+    opacity: 0.7;
+  }
+}
+
 

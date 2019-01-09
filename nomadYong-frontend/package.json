@@ -48,6 +48,8 @@
     "react": "^16.7.0",
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.7.0",
+    "react-facebook-login": "^4.0.1",
+    "react-google-login": "^4.0.1",
     "react-ionicons": "^3.0.1",
     "react-redux": "^6.0.0",
     "react-router": "4.0.0-alpha.6",
