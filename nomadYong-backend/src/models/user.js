@@ -10,10 +10,13 @@ const userSchema = Schema({
       type: String,
       lowercase: true
     },
-    password: {
+    userName: {
       type: String,
     },
-    userName: {
+    name: {
+      type: String,
+    },
+    password: {
       type: String,
     },
     profile_image: {
@@ -55,11 +58,11 @@ userSchema.methods = {
     return {
       _id: this._id,
       email: this.email,
+      name: this.name,
       userName: this.userName,
       profile_image: this.profile_image
     };
   },
-
 }
 
 

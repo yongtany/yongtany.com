@@ -13,7 +13,7 @@ signToken = user => {
 
 module.exports = {
     signUp: async (req, res, next) => {
-      const { email, password, userName, profile_image } = req.value.body;
+      const { email, name, userName, password, profile_image } = req.value.body;
 
       // Check if there is a user with the same email
       const foundUser = await User.findOne({"email": email });
@@ -26,6 +26,7 @@ module.exports = {
           email: email,
           password: password,
           userName: userName,
+          name: name,
           profile_image: profile_image,
           provider: 'LOCAL'
       });

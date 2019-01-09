@@ -34,9 +34,10 @@ passport.use('facebookToken', new FacebookTokenStrategy({
   clientSecret: config.oauth.facebook.clientSecret
 }, async (accessToken, refreshToken, profile, done) => {
   try {
-    console.log('profile', profile);
-    console.log('accessToken', accessToken);
-    console.log('refreshToken', refreshToken);
+    // console.log('profile', profile);
+    // console.log('accessToken', accessToken);
+    // console.log('refreshToken', refreshToken);
+    const name = profile.name.familyName + ' ' + profile.name.givenName;
 
     const existingUser = await User.findOne({ "uid": profile.id });
     if(existingUser) {
@@ -46,8 +47,9 @@ passport.use('facebookToken', new FacebookTokenStrategy({
     const newUser = new User({
         email: profile.emails[0].value,
         userName: profile.displayName,
+        name: name,
         profile_image: profile.photos[0].value,
-        provier: 'FACEBOOK',
+        provider: profile.provider,
         uid: profile.id,
     });
 
@@ -64,9 +66,11 @@ passport.use('googleToken', new GooglePlusTokenStrategy({
   clientScret: config.oauth.google.clientSecret
 }, async (accessToken, refreshToken, profile, done) => {
   try {
-    console.log('accessToken', accessToken);
-    console.log('refreshToken', refreshToken);
-    console.log('profile', profile);
+    // console.log('accessToken', accessToken);
+    // console.log('refreshToken', refreshToken);
+    // console.log('profile', profile);
+    const name = profile.name.familyName + ' ' + profile.name.givenName;
+    console.log(name);
 
     // Check whether this current user exists in our DB
     const existingUser = await User.findOne({ "uid": profile.id});
@@ -79,7 +83,8 @@ passport.use('googleToken', new GooglePlusTokenStrategy({
         email: profile.emails[0].value,
         userName: profile.displayName,
         profile_image: profile.photos[0].value,
-        provider: 'GOOGLE',
+        name: name,
+        provider: profile.provider,
         uid: profile.id,
     });
 
