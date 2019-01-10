@@ -40,11 +40,20 @@ const Navigation = (props) => (
                       Blog
                     </Link>
                   </div>
-                  <div className={cx('right')}>
-                    <Link to="/auth">
-                      Login
+                  {props.isLoggedIn ?
+                  <div className={cx('right')} onClick={props.signOut}>
+                    <Link to='/auth'>
+                      Sign out
                     </Link>
                   </div>
+                  :
+                  <div className={cx('right')}>
+                    <Link to="/auth">
+                      Sign in
+                    </Link>
+                  </div>
+                  }
+
               </div>
           </div>
       </div>

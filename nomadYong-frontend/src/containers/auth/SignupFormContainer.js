@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 import SignupForm from "components/auth/SignupForm";
 import * as authActions from 'store/modules/auth';
 
 class SignupFormContainer extends Component {
+
   state = {
     email: "",
     name: "",
@@ -34,9 +36,9 @@ class SignupFormContainer extends Component {
     });
   };
 
-  _handleSubmit = event => {
+   _handleSubmit = async event  => {
     const { email, name, username, password } = this.state;
-    const { AuthActions } = this.props;
+    const { AuthActions, history } = this.props;
 
     const post = {
       email: email,
@@ -46,7 +48,8 @@ class SignupFormContainer extends Component {
     };
 
     event.preventDefault();
-    AuthActions.signUp(post);
+    await AuthActions.signUp(post);
+    history.push('/');
   };
 
   _handleFacebookLogin = response => {
@@ -60,4 +63,4 @@ export default connect(
   (dispatch) => ({
     AuthActions: bindActionCreators(authActions, dispatch)
   })
-)(SignupFormContainer);
+)(withRouter(SignupFormContainer));

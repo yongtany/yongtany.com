@@ -35,11 +35,18 @@ export default handleActions({
 
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
-      return state.set('token', token)
+      return state.set('isLoggedIn', true)
+                  .set('token', token)
                   .set('name', name);
     },
     onError: (state, action) => {
       return state.set('errorMessage', 'Login Faild')
     }
-  })
+  }),
+  [AUTH_SIGN_OUT] : (state, action) => {
+    localStorage.clear();
+    return state.set('isLoggedIn', false)
+                .set('name', null)
+                .set('token', null);
+  },
 }, initialState);
