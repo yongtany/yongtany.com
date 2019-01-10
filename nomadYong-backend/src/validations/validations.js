@@ -19,7 +19,7 @@ module.exports = {
       email: Joi.string().email().required(),
       name: Joi.string().required(),
       password: Joi.string().required(),
-      userName: Joi.string().required(),
+      username: Joi.string().required(),
       profile_image: Joi.string()
     }),
 

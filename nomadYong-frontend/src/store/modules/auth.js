@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
+import * as api from 'lib/api';
 
 import { Map } from 'immutable';
 import { pender } from 'redux-pender';
@@ -10,7 +11,7 @@ const AUTH_SIGN_OUT = 'auth/AUTH_SIGN_OUT';
 const AUTH_ERROR = 'auth/AUTH_ERROR';
 
 // action creators
-export const signUp = createAction(AUTH_SIGN_UP);
+export const signUp = createAction(AUTH_SIGN_UP, api.signUp);
 export const signIn = createAction(AUTH_SIGN_IN);
 export const signOut = createAction(AUTH_SIGN_OUT);
 export const authError = createAction(AUTH_ERROR);
@@ -18,8 +19,9 @@ export const authError = createAction(AUTH_ERROR);
 
 // initial state
 const initialState = Map({
-  logged: false,// 현재 로그인 상태
-  token: '',
+  isLoggedIn: localStorage.getItem("jwt") ? true : false,
+  token: localStorage.getItem("jwt"),
+  name: localStorage.getItem('name'),
   errorMessage: ''
 });
 
@@ -28,7 +30,16 @@ export default handleActions({
   ...pender({
     type: AUTH_SIGN_UP,
     onSuccess: (state, action) => {
+      const { token, newUser  } = action.payload.data;
+      const name = newUser.name;
 
+      localStorage.setItem("jwt", token);
+      localStorage.setItem("name", name);
+      return state.set('token', token)
+                  .set('name', name);
+    },
+    onError: (state, action) => {
+      return state.set('errorMessage', 'Login Faild')
     }
   })
 }, initialState);

@@ -4,7 +4,7 @@ import {GoogleLogin} from 'react-google-login';
 import formStyles from 'styles/formStyles.scss'
 
 
-const SignupForm = () => (
+const SignupForm = (props) => (
   <div className={formStyles.formComponent}>
         <FacebookLogin
             appId="376989863060617"
@@ -27,37 +27,41 @@ const SignupForm = () => (
           />
 
         <span className={formStyles.divider}>or</span>
-        <form className={formStyles.form}>
+        <form
+          className={formStyles.form}
+          onSubmit={props.handleSubmit }
+          method="post"
+        >
             <input
                 type="email"
                 placeholder="Email"
                 className={formStyles.textInput}
-                // value={props.emailValue}
-                // onChange={props.handleInputChange}
+                value={props.emailValue}
+                onChange={props.handleInputChange}
                 name="email"
             />
             <input
                 type="text"
                 placeholder="Name"
                 className={formStyles.textInput}
-                // value={props.nameValue}
-                // onChange={props.handleInputChange}
+                value={props.nameValue}
+                onChange={props.handleInputChange}
                 name="name"
             />
             <input
                 type="username"
                 placeholder="Username"
                 className={formStyles.textInput}
-                // value={props.usernameValue}
-                // onChange={props.handleInputChange}
+                value={props.usernameValue}
+                onChange={props.handleInputChange}
                 name="username"
             />
             <input
                 type="password"
                 placeholder="Password"
                 className={formStyles.textInput}
-                // value={props.passwordValue}
-                // onChange={props.handleInputChange}
+                value={props.passwordValue}
+                onChange={props.handleInputChange}
                 name="password"
             />
             <input

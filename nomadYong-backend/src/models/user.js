@@ -10,11 +10,12 @@ const userSchema = Schema({
       type: String,
       lowercase: true
     },
-    userName: {
+    username: {
       type: String,
     },
     name: {
       type: String,
+      required: true
     },
     password: {
       type: String,
@@ -59,7 +60,7 @@ userSchema.methods = {
       _id: this._id,
       email: this.email,
       name: this.name,
-      userName: this.userName,
+      username: this.username,
       profile_image: this.profile_image
     };
   },
