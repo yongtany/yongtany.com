@@ -55,7 +55,7 @@ export default handleActions({
                   .set('name', name);
     },
     onError: (state, action) => {
-      return state.set('errorMessage', 'Sign up Faild')
+      return state.set('errorMessage', 'Sign in Faild')
     }
   }),
   [AUTH_SIGN_OUT] : (state, action) => {
