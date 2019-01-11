@@ -3,7 +3,7 @@ import styles from './AuthBoard.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
-import LoginForm from 'components/auth/LoginForm';
+import LoginFormContainer from 'containers/auth/LoginFormContainer';
 import SignFormContainer from 'containers/auth/SignupFormContainer';
 
 const cx = classNames.bind(styles);
@@ -20,7 +20,7 @@ const AuthBoard = (props) => (
     </div>
     <div className={cx('auth-content')}>
       <div className={cx('white-box', 'form-box')}>
-        {props.action ==='login' && <LoginForm />}
+        {props.action ==='login' && <LoginFormContainer />}
         {props.action ==='signup' && <SignFormContainer />}
       </div>
       <div className={cx('white-box')}>

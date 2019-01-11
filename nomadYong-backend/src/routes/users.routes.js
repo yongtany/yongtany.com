@@ -11,10 +11,10 @@ const passportGoogle = passport.authenticate('googleToken', { session: false });
 const passportFacebook = passport.authenticate('facebookToken', { session : false });
 
 router.route('/signup')
-  .post(validateBody(schemas.authSchema), UsersController.signUp);
+  .post(validateBody(schemas.signUpSchema), UsersController.signUp);
 
 router.route('/signin')
-  .post(validateBody(schemas.authSchema), passportSignIn, UsersController.signIn);
+  .post(validateBody(schemas.signInSchema), passportSignIn, UsersController.signIn);
 
 router.route('/oauth/google')
   .post(passportGoogle, UsersController.googleOAuth);

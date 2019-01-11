@@ -1,19 +1,25 @@
 import React, { Component } from "react";
-import LoginForm from "componentns/auth";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
-class Container extends Component {
+
+import LoginForm from "components/auth/LoginForm";
+import * as authActions from 'store/modules/auth';
+
+class LoginFormContainer extends Component {
   state = {
-    username: "",
+    email: "",
     password: ""
   };
 
   render() {
-    const { username, password } = this.state;
+    const { email, password } = this.state;
     return (
       <LoginForm
         handleInputChange={this._handleInputChange}
         handleSubmit={this._handleSubmit}
-        usernameValue={username}
+        emailValue={email}
         passwordValue={password}
         handleFacebookLogin={this._handleFacebookLogin}
       />
@@ -25,11 +31,18 @@ class Container extends Component {
       [name]: value
     });
   };
-  _handleSubmit = event => {
-    const { usernameLogin } = this.props;
-    const { username, password } = this.state;
+  _handleSubmit = async  event => {
+    const { email, password } = this.state;
+    const { AuthAcitons, history } = this.props;
+
+    const post ={
+      email: email,
+      password: password
+    }
+
     event.preventDefault();
-    usernameLogin(username, password);
+    await AuthAcitons.signIn(post);
+    history.push('/');
   };
   _handleFacebookLogin = response => {
     const { facebookLogin } = this.props;
@@ -37,4 +50,9 @@ class Container extends Component {
   };
 }
 
-export default Container;
+export default connect(
+  null,
+  (dispatch) => ({
+    AuthAcitons: bindActionCreators(authActions, dispatch)
+  })
+)(withRouter(LoginFormContainer));

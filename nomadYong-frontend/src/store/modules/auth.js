@@ -12,7 +12,7 @@ const AUTH_ERROR = 'auth/AUTH_ERROR';
 
 // action creators
 export const signUp = createAction(AUTH_SIGN_UP, api.signUp);
-export const signIn = createAction(AUTH_SIGN_IN);
+export const signIn = createAction(AUTH_SIGN_IN, api.signIn);
 export const signOut = createAction(AUTH_SIGN_OUT);
 export const authError = createAction(AUTH_ERROR);
 
@@ -40,7 +40,22 @@ export default handleActions({
                   .set('name', name);
     },
     onError: (state, action) => {
-      return state.set('errorMessage', 'Login Faild')
+      return state.set('errorMessage', 'Sign up Faild')
+    }
+  }),
+  ...pender({
+    type: AUTH_SIGN_IN,
+    onSuccess: (state, action) => {
+      const { token, user } = action.payload.data;
+      const name = user.name;
+      localStorage.setItem("jwt", token);
+      localStorage.setItem("name", name);
+      return state.set('isLoggedIn', true)
+                  .set('token', token)
+                  .set('name', name);
+    },
+    onError: (state, action) => {
+      return state.set('errorMessage', 'Sign up Faild')
     }
   }),
   [AUTH_SIGN_OUT] : (state, action) => {

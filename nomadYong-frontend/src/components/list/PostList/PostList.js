@@ -16,8 +16,6 @@ const PostList = ({posts, page, lastPage, tag}) => {
       const userName = post.getIn(['user', 'userName']);
       const profile_image = post.getIn(['user', 'profile_image']);
 
-      console.log(body);
-
       return (
         <PostItem
           title={title}

@@ -8,3 +8,4 @@ export const editPost = ({id, title, body, tags}) => axios.patch(`/posts/${id}`,
 export const removePost = (id) => axios.delete(`/posts/${id}`);
 
 export const signUp = ({email, name, username, password}) => axios.post('/users/signup', { email, name, username, password });
+export const signIn = ({email, password}) => axios.post('/users/signin', { email, password });

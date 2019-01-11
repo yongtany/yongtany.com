@@ -4,23 +4,23 @@ import GoogleLogin from 'react-google-login';
 import formStyles from 'styles/formStyles.scss'
 
 
-const LoginForm = () => (
+const LoginForm = (props) => (
   <div className={formStyles.formComponent}>
-        <form className={formStyles.form}>
+        <form className={formStyles.form} onSubmit={props.handleSubmit} >
             <input
                 type="text"
                 className={formStyles.textInput}
-                placeholder="Username"
-                // value={props.usernameValue}
-                // onChange={props.handleInputChange}
-                name="username"
+                placeholder="Email"
+                value={props.emailValue}
+                onChange={props.handleInputChange}
+                name="email"
             />
             <input
                 type="password"
                 className={formStyles.textInput}
                 placeholder="Password"
-                // value={props.passwordValue}
-                // onChange={props.handleInputChange}
+                value={props.passwordValue}
+                onChange={props.handleInputChange}
                 name="password"
             />
             <input
