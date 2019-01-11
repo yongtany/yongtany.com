@@ -8,13 +8,13 @@ import { pender } from 'redux-pender';
 const AUTH_SIGN_UP = 'auth/AUTH_SIGN_UP';
 const AUTH_SIGN_IN = 'auth/AUTH_SIGN_IN';
 const AUTH_SIGN_OUT = 'auth/AUTH_SIGN_OUT';
-const AUTH_ERROR = 'auth/AUTH_ERROR';
 
 // action creators
 export const signUp = createAction(AUTH_SIGN_UP, api.signUp);
 export const signIn = createAction(AUTH_SIGN_IN, api.signIn);
+export const googleLogin = createAction(AUTH_SIGN_IN, api.googleLogin);
+export const facebookLogin = createAction(AUTH_SIGN_IN, api.facebookLogin);
 export const signOut = createAction(AUTH_SIGN_OUT);
-export const authError = createAction(AUTH_ERROR);
 
 
 // initial state

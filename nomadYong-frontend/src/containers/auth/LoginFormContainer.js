@@ -21,10 +21,12 @@ class LoginFormContainer extends Component {
         handleSubmit={this._handleSubmit}
         emailValue={email}
         passwordValue={password}
-        handleFacebookLogin={this._handleFacebookLogin}
+        googleLogin={this._handleGoogleLogin}
+        facebookLogin={this._handlefacebookLogin}
       />
     );
   }
+
   _handleInputChange = event => {
     const { target: { value, name } } = event;
     this.setState({
@@ -33,7 +35,7 @@ class LoginFormContainer extends Component {
   };
   _handleSubmit = async  event => {
     const { email, password } = this.state;
-    const { AuthAcitons, history } = this.props;
+    const { AuthActions, history } = this.props;
 
     const post ={
       email: email,
@@ -41,18 +43,33 @@ class LoginFormContainer extends Component {
     }
 
     event.preventDefault();
-    await AuthAcitons.signIn(post);
+    await AuthActions.signIn(post);
     history.push('/');
   };
-  _handleFacebookLogin = response => {
-    const { facebookLogin } = this.props;
-    facebookLogin(response.accessToken);
+  _handleGoogleLogin = async res => {
+    const { AuthActions, history } = this.props;
+    const accessToken = {
+      access_token : res.accessToken
+    }
+
+    await AuthActions.googleLogin(accessToken);
+    history.push('/');
+  };
+
+  _handlefacebookLogin = async res => {
+    const { AuthActions, history } = this.props;
+    const accessToken = {
+      access_token : res.accessToken
+    }
+
+    await AuthActions.facebookLogin(accessToken);
+    history.push('/');
   };
 }
 
 export default connect(
   null,
   (dispatch) => ({
-    AuthAcitons: bindActionCreators(authActions, dispatch)
+    AuthActions: bindActionCreators(authActions, dispatch)
   })
 )(withRouter(LoginFormContainer));

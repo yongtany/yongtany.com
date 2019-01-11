@@ -71,7 +71,6 @@ passport.use('googleToken', new GooglePlusTokenStrategy({
     // console.log('refreshToken', refreshToken);
     // console.log('profile', profile);
     const name = profile.name.familyName + ' ' + profile.name.givenName;
-    console.log(name);
 
     // Check whether this current user exists in our DB
     const existingUser = await User.findOne({ "uid": profile.id});
