@@ -25,7 +25,8 @@ class SignupFormContainer extends Component {
         passwordValue={password}
         handleInputChange={this._handleInputChange}
         handleSubmit={this._handleSubmit}
-        handleFacebookLogin={this._handleFacebookLogin}
+        facebookLogin={this._handleFacebookLogin}
+        googleLogin={this._handleGoogleLogin}
       />
     );
   }
@@ -52,11 +53,27 @@ class SignupFormContainer extends Component {
     history.push('/');
   };
 
-  _handleFacebookLogin = response => {
-    const { facebookLogin } = this.props;
-    facebookLogin(response.accessToken);
+  _handleGoogleLogin = async res => {
+    const { AuthActions, history } = this.props;
+    const accessToken = {
+      access_token : res.accessToken
+    }
+
+    await AuthActions.googleLogin(accessToken);
+    history.push('/');
+  };
+
+  _handlefacebookLogin = async res => {
+    const { AuthActions, history } = this.props;
+    const accessToken = {
+      access_token : res.accessToken
+    }
+
+    await AuthActions.facebookLogin(accessToken);
+    history.push('/');
   };
 }
+
 
 export default connect(
   null,

@@ -6,7 +6,8 @@ import {
   PostPage,
   EditorPage,
   NotFoundPage,
-  AuthPage
+  AuthPage,
+  AboutPage
 } from 'pages';
 
 
@@ -17,11 +18,12 @@ const App = props => [
 const PublicRoutes = (props) => (
   <Switch>
     <Route exact path="/" component={HomePage} />
-    <Route path="/post" component={ListPage}/>
+    <Route exact path="/post" component={ListPage}/>
     <Route path="/page/:page" component={ListPage}/>
     <Route path="/tag/:tag/:page?" component={ListPage}/>
     <Route path="/post/:id" component={PostPage}/>
     <Route path="/auth" component={AuthPage}/>
+    <Route path="/about" component={AboutPage}/>
     <Route component={NotFoundPage}/>
   </Switch>
 );
@@ -29,11 +31,12 @@ const PublicRoutes = (props) => (
 const PrivateRoutes = (props) => (
   <Switch>
     <Route exact path="/" component={HomePage} />
-    <Route path="/post" component={ListPage}/>
+    <Route exact path="/post" component={ListPage}/>
     <Route path="/page/:page" component={ListPage}/>
     <Route path="/tag/:tag/:page?" component={ListPage}/>
     <Route path="/post/:id" component={PostPage}/>
     <Route path="/editor" component={EditorPage}/>
+    <Route path="/about" component={AboutPage}/>
     <Route component={NotFoundPage}/>
   </Switch>
 );

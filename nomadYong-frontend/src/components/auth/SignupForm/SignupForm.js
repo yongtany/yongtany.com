@@ -3,26 +3,27 @@ import FacebookLogin from 'react-facebook-login';
 import {GoogleLogin} from 'react-google-login';
 import formStyles from 'styles/formStyles.scss'
 
+import * as keys from 'lib/keys';
 
 const SignupForm = (props) => (
   <div className={formStyles.formComponent}>
         <FacebookLogin
-            appId="376989863060617"
+            appId={keys.FACEBOOK_CLIENT_ID}
             autoLoad={false}
             fields="name,email,picture"
-            // callback={props.handleFacebookLogin}
+            callback={props.facebookLogin}
             cssClass={formStyles.facebookLogin}
             icon="fab fa-facebook-square"
-        />
+          />
         <GoogleLogin
-            clientId="354131151000-hbk8i0cg1gsi44knac314of73tbgrnoq.apps.googleusercontent.com"
+            clientId={keys.GOOGLE_CLIENT_ID}
             render={renderProps => (
               <button className={formStyles.googleLogin} onClick={renderProps.onClick}>
                 <i className={'fab fa-google'}></i>Login with Google
               </button>
             )}
             buttonText="Login with Google"
-            // onSuccess={responseGoogle}
+            onSuccess={props.googleLogin}
             // onFailure={responseGoogle}
           />
 

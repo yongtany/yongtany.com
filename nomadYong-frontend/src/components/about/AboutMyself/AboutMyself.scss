@@ -1,0 +1,39 @@
+@import 'styles/utils.scss';
+
+
+.about-myself {
+  .about-header{
+    span {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: $oc-gray-6;
+      text-transform: uppercase;
+    }
+  }
+  .paper {
+    padding: 2rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    background: white;
+    @include material-shadow(4, 0.5);
+    margin: 0 auto;
+    min-height: 10rem;
+    margin-top: 3.2rem;
+    transform: translateY(-1.5rem);
+
+    .list {
+      list-style-type: circle;
+    }
+
+    h4 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      color: $oc-gray-7;
+
+    }
+  }
+
+  // 해상도에 따라 다른 width를 설정
+  @include media("<large") { width : 768px; }
+  @include media("<medium") { width: calc(100% - 2rem); }
+}
