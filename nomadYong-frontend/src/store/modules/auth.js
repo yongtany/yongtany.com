@@ -1,5 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 import * as api from 'lib/api';
+import axios from 'axios';
 
 import { Map } from 'immutable';
 import { pender } from 'redux-pender';
@@ -50,6 +51,7 @@ export default handleActions({
       const name = user.name;
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
+      axios.defaults.headers.common['Authorization'] = action.payload.data.token;
       return state.set('isLoggedIn', true)
                   .set('token', token)
                   .set('name', name);
