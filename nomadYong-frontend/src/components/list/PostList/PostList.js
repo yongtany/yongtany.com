@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 const PostList = ({posts, page, lastPage, tag}) => {
   const postList = posts.map(
     (post) => {
-      const { _id, title, body, publishedDate, tags } = post.toJS();
+      const { _id, title, body, publishedDate, postImage, tags } = post.toJS();
 
       const userName = post.getIn(['user', 'userName']);
       const profile_image = post.getIn(['user', 'profile_image']);
@@ -21,6 +21,7 @@ const PostList = ({posts, page, lastPage, tag}) => {
           title={title}
           body={body}
           publishedDate={publishedDate}
+          postImage={postImage}
           userName={userName}
           profile_image={profile_image}
           tags={tags}

@@ -4,21 +4,33 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import removeMd from 'remove-markdown';
+import styled, { css } from 'styled-components';
 
 import Tag from 'components/common/Tag';
 
 const cx = classNames.bind(styles);
 
-const PostItem = ({title, body, publishedDate, userName, tags, id}) => {
+
+
+const PostItem = ({title, body, publishedDate, postImage, userName, tags, id}) => {
   const tagList = tags.map(
     tag => <Tag key={tag} to={`/tag/${tag}`} tag={tag} />
   );
 
+  const Image = styled.div`
+    background-image: url(${postImage});
+
+    padding: 15px;
+    width:25%;
+    background-size:cover;
+    color:#fff;
+  `;
+
   return (
     <div className={cx('post-item')}>
-      <div className={cx('image')}>
+      <Image>
         <h4 className={cx('category')}>Develop</h4>
-      </div>
+      </Image>
       <div className={cx('content')}>
         <Link to={`/post/${id}`}><h2 className={cx('title')}>{title}</h2></Link>
         <div className={cx('sub')}>
