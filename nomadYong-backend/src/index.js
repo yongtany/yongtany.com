@@ -11,7 +11,12 @@ const app = express();
 
 // Middlewares
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(bodyParser.json());
+
 
 // Routes
 app.use('/users', require('routes/users.routes'));

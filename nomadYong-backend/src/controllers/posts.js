@@ -1,12 +1,40 @@
 const HTTPStatus = require('http-status');
+const multer = require('multer');
 
 const Post = require('models/post');
 
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, './uploads/');
+  },
+  filename: function(req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  }
+});
+
+const fileFilter = (req, file, cb) => {
+  // reject a file
+  if(file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+
 module.exports = {
+  upload : multer({
+    storage: storage,
+    limits : {
+      fileSize: 1024 * 1024* 5
+    },
+    fileFilter: fileFilter
+  }),
+
   createPost : async (req, res) => {
     try {
-      const post = await Post.createPost(req.body, req.user._id);
-      console.log(post);
+      console.log(req.file);
+      const post = await Post.createPost(req.body, req.user._id, req.file.path);
+      console.log(post.toJSON());
       return res.status(HTTPStatus.CREATED).json(post.toJSON());
     } catch(e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);

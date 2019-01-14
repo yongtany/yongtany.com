@@ -2,12 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  title: String,
-  body: String,
+  title: {
+    type: String,
+    required: true
+  },
+  body: {
+    type: String,
+    required: true
+  },
   tags: [String],
   publishedDate: {
     type: Date,
     default: new Date() // 현재 날짜를 기본값으로
+  },
+  postImage: {
+    type: String,
   },
   user: {
     type: Schema.Types.ObjectId,
@@ -26,6 +35,7 @@ postSchema.methods = {
       title: this.title,
       body: this.body,
       tags: this.tags,
+      postImage: this.postImage,
       publishedDate: this.publishedDate,
       user: this.user,
       favoriteCount: this.favoriteCount,
@@ -34,10 +44,11 @@ postSchema.methods = {
 };
 
 postSchema.statics = {
-  createPost(args, user) {
+  createPost(args, user, postImage) {
     return this.create({
       ...args,
       user,
+      postImage
     });
   },
 };
