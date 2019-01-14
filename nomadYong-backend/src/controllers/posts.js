@@ -32,9 +32,7 @@ module.exports = {
 
   createPost : async (req, res) => {
     try {
-      console.log(req.file);
       const post = await Post.createPost(req.body, req.user._id, req.file.path);
-      console.log(post.toJSON());
       return res.status(HTTPStatus.CREATED).json(post.toJSON());
     } catch(e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
