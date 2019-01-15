@@ -5,13 +5,29 @@
   margin-right: 2rem;
   border-right: 1px solid $oc-gray-5;
 
-  .label {
-    font-size: 1.5rem;
-    font-weight: 100;
-    align-content: center;
-    color: $oc-gray-6;
-    margin-bottom: 3rem;
+  .header {
+    display: flex;
+    @include media("<medium") {
+      flex-direction: column;
+    }
+    .label {
+      font-size: 1.5rem;
+      font-weight: 100;
+      align-content: center;
+      color: $oc-gray-6;
+
+    }
+
+    .button {
+      margin-left: 22rem;
+      text-transform: uppercase;
+      @include media("<medium") {
+        margin-left: 0;
+        margin-top: 2rem;
+      }
+    }
   }
+
 
   .post-item + .post-item {
     border-top: 1 solid $oc-gray-3;

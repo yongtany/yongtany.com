@@ -29,11 +29,17 @@ class ListContainer extends Component {
 
 
   render() {
-    const { loading, posts, page, lastPage, tag } = this.props;
+    const { loading, posts, page, lastPage, tag, isLoggedIn } = this.props;
 
     if(loading) return null; // 로딩 중에는 아무것도 보여주지 않습니다.
     return (
-        <PostList posts={posts} page={page} lastPage={lastPage} tag={tag}/>
+        <PostList
+          posts={posts}
+          page={page}
+          lastPage={lastPage}
+          tag={tag}
+          isLoggedIn={isLoggedIn}
+        />
     );
   }
 }
@@ -42,7 +48,8 @@ export default connect(
   (state) => ({
     lastPage: state.list.get('lastPage'),
     posts: state.list.get('posts'),
-    loading: state.pender.pending['list/GET_POST_LIST']
+    loading: state.pender.pending['list/GET_POST_LIST'],
+    isLoggedIn: state.auth.get('isLoggedIn')
   }),
   (dispatch) => ({
     ListActions: bindActionCreators(listActions, dispatch)
