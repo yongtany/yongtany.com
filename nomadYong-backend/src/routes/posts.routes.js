@@ -10,7 +10,7 @@ const passportJWT = passport.authenticate('jwt', { session: false });
 router.route('/')
   .post(passportJWT,
   // validateBody(schemas.postSchema),
-  // PostsControllers.upload.single('postImage'),
+  PostsControllers.upload.single('postImage'),
   PostsControllers.createPost);
 
 router.route('/')

@@ -32,8 +32,8 @@ module.exports = {
 
   createPost : async (req, res) => {
     try {
-      // const post = await Post.createPost(req.body, req.user._id, req.file.path);
-      const post = await Post.createPost(req.body, req.user._id);
+      const post = await Post.createPost(req.body, req.user._id, req.file.path);
+      // const post = await Post.createPost(req.body, req.user._id);
       console.log(post);
       return res.status(HTTPStatus.CREATED).json(post.toJSON());
     } catch(e) {

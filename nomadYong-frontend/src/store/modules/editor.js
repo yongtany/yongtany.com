@@ -32,12 +32,12 @@ export default handleActions({
     const { name, value } = action.payload;
     return state.set(name, value);
   },
-  // [CHANGE_FILE_INPUT]: (state, action) => {
-  //   const { files } = action.payload;
-  //   const file = files[0];
+  [CHANGE_FILE_INPUT]: (state, action) => {
+    const { files } = action.payload;
+    const file = files[0];
 
-  //   return state.set('postImage', file);
-  // },
+    return state.set('postImage', file);
+  },
 
   ...pender({
     type: WRITE_POST,

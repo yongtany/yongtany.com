@@ -15,7 +15,7 @@ const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
     (post) => {
       const { _id, title, body, publishedDate, postImage, tags } = post.toJS();
 
-      const userName = post.getIn(['user', 'userName']);
+      const name = post.getIn(['user', 'name']);
       const profile_image = post.getIn(['user', 'profile_image']);
 
       return (
@@ -24,7 +24,7 @@ const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
           body={body}
           publishedDate={publishedDate}
           postImage={postImage}
-          userName={userName}
+          name={name}
           profile_image={profile_image}
           tags={tags}
           key={_id}

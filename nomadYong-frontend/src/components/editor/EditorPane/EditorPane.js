@@ -46,6 +46,7 @@ class EditorPane extends Component {
     onChangeInput({name, value});
   }
 
+
   handleFileChange =(e) => {
     const { onChangeFileInput } = this.props;
     const { files } = e.target;
@@ -81,13 +82,16 @@ class EditorPane extends Component {
 
   render() {
     const { handleChange } = this;
-    const { tags, title, postImage } = this.props;
-    console.log(postImage);
+    const { tags, title, postImage, onSubmit } = this.props;
+
 
     return (
-      <div className={cx('editor-pane')}>
+      <form className={cx('editor-pane')} onSubmit={onSubmit} >
         <div className={cx('post-image')}>
-        {/* <input type="file" files={postImage} onChange={this.handleFileChange} /> */}
+          <input type="file" files={postImage} onChange={this.handleFileChange} />
+        </div>
+        <div className={cx('submit')}>
+          <input type="submit" name="Submit" />
         </div>
         <input
           className={cx('title')}
@@ -106,7 +110,7 @@ class EditorPane extends Component {
             onChange={handleChange}
           />
         </div>
-      </div>
+      </form>
     );
   }
 }

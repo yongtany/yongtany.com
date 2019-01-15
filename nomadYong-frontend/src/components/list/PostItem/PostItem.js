@@ -10,7 +10,7 @@ import Tag from 'components/common/Tag';
 const cx = classNames.bind(styles);
 
 
-const PostItem = ({title, body, publishedDate, postImage, userName, tags, id}) => {
+const PostItem = ({title, body, publishedDate, postImage, name, tags, id}) => {
   const tagList = tags.map(
     tag => <Tag key={tag} to={`/tag/${tag}`} tag={tag} />
   );
@@ -27,7 +27,7 @@ const PostItem = ({title, body, publishedDate, postImage, userName, tags, id}) =
       <div className={cx('content')}>
         <Link to={`/post/${id}`}><h2 className={cx('title')}>{title}</h2></Link>
         <div className={cx('sub')}>
-          <span className={cx('published')}>{userName}</span> | <span className={cx('created')}>{moment(publishedDate).format('ll')}</span>
+          <span className={cx('published')}>{name}</span> | <span className={cx('created')}>{moment(publishedDate).format('ll')}</span>
         </div>
         <p className={cx('text')}>
           {removeMd(body)}
