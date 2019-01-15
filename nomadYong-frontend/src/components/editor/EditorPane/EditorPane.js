@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import styles from './EditorPane.scss';
 import classNames from 'classnames/bind';
+// import ImageUploader from 'react-images-upload';
 
 import CodeMirror from 'codemirror';
+
 
 import 'codemirror/mode/markdown/markdown'; // 마크다운 문법 색상
 // 마크다운 내부에 들어가는 코드 색상
@@ -44,6 +46,16 @@ class EditorPane extends Component {
     onChangeInput({name, value});
   }
 
+  handleFileChange =(e) => {
+    const { onChangeFileInput } = this.props;
+    const { files } = e.target;
+
+    onChangeFileInput({
+      files
+    });
+  }
+
+
   handleChangeMarkdown = (doc) => {
     const { onChangeInput } = this.props;
     this.cursor = doc.getCursor(); // 텍스트 cursor의 위치를 저장합니다
@@ -67,13 +79,16 @@ class EditorPane extends Component {
   }
 
 
-
   render() {
     const { handleChange } = this;
-    const { tags, title } = this.props;
+    const { tags, title, postImage } = this.props;
+    console.log(postImage);
 
     return (
       <div className={cx('editor-pane')}>
+        <div className={cx('post-image')}>
+        {/* <input type="file" files={postImage} onChange={this.handleFileChange} /> */}
+        </div>
         <input
           className={cx('title')}
           placeholder="제목을 입력하세요"
