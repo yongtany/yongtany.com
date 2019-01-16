@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PostInfo from 'components/post/PostInfo';
 import PostBody from 'components/post/PostBody';
+import Loading from 'components/common/Loading';
 import * as postActions from 'store/modules/post';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -22,7 +23,7 @@ class Post extends Component {
   render() {
     const { loading, post } = this.props;
 
-    if(loading) return null; // 로딩 중일 때는 아무것도 보여주지 않음
+    if(loading) return <Loading />;
 
     const { title, body, publishedDate, tags } = post.toJS();
 

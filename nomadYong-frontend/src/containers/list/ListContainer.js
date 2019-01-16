@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PostList from 'components/list/PostList';
+import Loading from 'components/common/Loading';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as listActions from 'store/modules/list';
@@ -31,7 +32,7 @@ class ListContainer extends Component {
   render() {
     const { loading, posts, page, lastPage, tag, isLoggedIn } = this.props;
 
-    if(loading) return null; // 로딩 중에는 아무것도 보여주지 않습니다.
+    if(loading) return <Loading />; // 로딩 중에는 아무것도 보여주지 않습니다.
     return (
         <PostList
           posts={posts}
