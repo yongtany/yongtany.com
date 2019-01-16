@@ -12,26 +12,27 @@ const cx = classNames.bind(styles);
 
 const PostInfo = ({title, tags, publishedDate, postImage, name}) => {
 
-  const backgroundImage = {
-    backgroundImage: `url(${postImage})`
+  const background = {
+    backgroundImage: `url(${postImage})`,
   }
-  console.log(postImage);
 
   return (
-    <div className={cx('post-info')}>
-    <div className={cx('info')} style={backgroundImage}>
-      <h1 className={cx('title')}>{title}</h1>
-      <h2 className={cx('sub')}>{moment(publishedDate).format('ll')} | PUBLISHED BY {name}</h2>
-      <div className={cx('tags')}>
-        {
-          // tags가 존재하는 경우에만 map을 실행합니다.
-          tags && tags.map(
-            tag => <Tag key={tag} to={`/tag/${tag}`} tag={tag} />
-          )
-        }
+    <div className={cx('post-info')} >
+        <div className={cx('info')} style={background}>
+          <div className={cx('info-overlay')}>
+            <h1 className={cx('title')}>{title}</h1>
+            <h2 className={cx('sub')}>{moment(publishedDate).format('ll')} | PUBLISHED BY {name}</h2>
+            <div className={cx('tags')}>
+              {
+                // tags가 존재하는 경우에만 map을 실행합니다.
+                tags && tags.map(
+                  tag => <Tag key={tag} to={`/tag/${tag}`} tag={tag} />
+                )
+              }
+            </div>
+          </div>
       </div>
     </div>
-  </div>
   )
 };
 

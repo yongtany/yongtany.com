@@ -14,7 +14,7 @@
 
 
     // 해상도에 따라 다른 width를 설정
-    width: 1024px;
+    width: 800px;
     @include media("<large") { width : 768px; }
     @include media("<medium") { width: calc(100% - 2rem); }
   }

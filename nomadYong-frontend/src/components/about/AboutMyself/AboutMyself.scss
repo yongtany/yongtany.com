@@ -2,6 +2,7 @@
 
 
 .about-myself {
+  margin: 0 auto;
   .about-header{
     span {
       font-size: 1.2rem;
@@ -32,7 +33,7 @@
     }
   }
 
-  // 해상도에 따라 다른 width를 설정
+  width: 800px;
   @include media("<large") { width : 768px; }
   @include media("<medium") { width: calc(100% - 2rem); }
 }

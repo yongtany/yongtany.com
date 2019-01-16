@@ -2,36 +2,42 @@
 
 .post-info {
   .info {
-    padding: 2rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    background: white;
     @include material-shadow(4, 0.5);
     transform: translateY(2.3rem);
     margin: 0 auto;
     min-height: 10rem;
+    background-size: cover;
 
-    .title {
-      font-size: 2rem;
-      font-weight: 200;
-      word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
+    .info-overlay {
+      padding: 2rem;
+      background-color: rgba(0,0,0,0.6);
+      min-height: 10rem;
+      color: white;
+      font-style: oblique;
+
+      .title {
+        font-size: 2rem;
+        font-weight: 400;
+        word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
+      }
+
+      .sub {
+        font-size: 1rem;
+        word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
+        text-align: right;
+        opacity: 0.5;
+        margin-top: 1rem;
+      }
+
+      .tags {
+        margin-top: 1rem;
+      }
     }
 
-    .sub {
-      font-size: 1rem;
-      word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
-      text-align: right;
-      opacity: 0.5;
-      font-style: italic;
-      margin-top: 1rem;
-    }
 
-    .tags {
-      margin-top: 1rem;
-    }
 
     // 해상도에 따라 다른 width를 설정
-    width: 1024px;
+    width: 800px;
     @include media("<large") { width : 768px; }
     @include media("<medium") { width: calc(100% - 2rem); }
   }
