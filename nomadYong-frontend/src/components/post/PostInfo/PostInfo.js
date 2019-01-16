@@ -8,11 +8,18 @@ import Tag from 'components/common/Tag';
 
 const cx = classNames.bind(styles);
 
-const PostInfo = ({title, tags, publishedDate, name}) => {
+
+
+const PostInfo = ({title, tags, publishedDate, postImage, name}) => {
+
+  const backgroundImage = {
+    backgroundImage: `url(${postImage})`
+  }
+  console.log(postImage);
 
   return (
     <div className={cx('post-info')}>
-    <div className={cx('info')}>
+    <div className={cx('info')} style={backgroundImage}>
       <h1 className={cx('title')}>{title}</h1>
       <h2 className={cx('sub')}>{moment(publishedDate).format('ll')} | PUBLISHED BY {name}</h2>
       <div className={cx('tags')}>

@@ -15,12 +15,14 @@
       font-weight: 100;
       align-content: center;
       color: $oc-gray-6;
+      white-space: nowrap;
 
     }
 
     .button {
       margin-left: 22rem;
       text-transform: uppercase;
+      white-space: nowrap;
       @include media("<medium") {
         margin-left: 0;
         margin-top: 2rem;

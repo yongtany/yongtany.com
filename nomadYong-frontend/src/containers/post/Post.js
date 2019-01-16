@@ -25,7 +25,7 @@ class Post extends Component {
 
     if(loading) return <Loading />;
 
-    const { title, body, publishedDate, tags } = post.toJS();
+    const { title, body, publishedDate, tags, postImage } = post.toJS();
 
     const name = post.getIn(['user', 'name']);
 
@@ -39,6 +39,7 @@ class Post extends Component {
           tags={tags}
           name={name}
           profile_image={profile_image}
+          postImage={postImage}
         />
         <PostBody body={body}/>
       </div>
