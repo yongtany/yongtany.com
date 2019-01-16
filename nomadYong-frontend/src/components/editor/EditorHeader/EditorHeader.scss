@@ -7,8 +7,14 @@
   padding-right: 1rem;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid $oc-gray-4;
 
-  .submit { // 우측 정렬
+  .right {
     margin-left: auto;
+    display: flex;
+    .update { // 우측 정렬
+      margin-right: 1rem;
+    }
   }
+
 }

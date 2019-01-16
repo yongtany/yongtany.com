@@ -5,14 +5,19 @@ import Button from 'components/common/Button'
 
 const cx = classNames.bind(styles);
 
-const EditorHeader = ({onGoBack, onSubmit}) => {
+const EditorHeader = ({onGoBack, onUpdate, onDelete}) => {
   return (
     <div className={cx('editor-header')}>
       <div className={cx('back')}>
-      <Button onClick={onGoBack} theme="outline">뒤로가기</Button>
+      <Button onClick={onGoBack} theme="outline">BACK</Button>
       </div>
-      <div className={cx('submit')}>
-        <Button onClick={onSubmit} theme="outline">작성하기</Button>
+      <div className={cx('right')}>
+        <div className={cx('update')}>
+          <Button onClick={onUpdate} theme="outline">UPDATE</Button>
+        </div>
+        <div className={cx('delete')}>
+          <Button onClick={onDelete} theme="outline">DELETE</Button>
+        </div>
       </div>
     </div>
   )

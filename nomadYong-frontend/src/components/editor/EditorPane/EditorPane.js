@@ -5,7 +5,6 @@ import classNames from 'classnames/bind';
 
 import CodeMirror from 'codemirror';
 
-
 import 'codemirror/mode/markdown/markdown'; // 마크다운 문법 색상
 // 마크다운 내부에 들어가는 코드 색상
 import 'codemirror/mode/javascript/javascript';
@@ -86,26 +85,30 @@ class EditorPane extends Component {
 
 
     return (
-      <form className={cx('editor-pane')} onSubmit={onSubmit} >
-        <div className={cx('post-image')}>
-          <input type="file" files={postImage} onChange={this.handleFileChange} />
-        </div>
-        <div className={cx('submit')}>
-          <input type="submit" name="Submit" />
+      <form className={cx('editor-pane')} onSubmit={onSubmit} enctype="multipart/form-data">
+        <div className={cx('eidtor-bar')}>
+          <span className={cx('image-label')}>Title Image</span>
+          <input
+            type="file"
+            files={postImage}
+            onChange={this.handleFileChange}
+            className={cx('imageBtn')}
+          />
+          <input type="submit" value="SUBMIT" name="Submit" className={cx('submitBtn')} />
         </div>
         <input
           className={cx('title')}
-          placeholder="제목을 입력하세요"
+          placeholder="Post title... "
           name="title"
           value={title}
           onChange={handleChange}
         />
         <div className={cx('code-editor')} ref={ref=>this.editor=ref}></div>
         <div className={cx('tags')}>
-          <div className={cx('description')}>태그</div>
+          <div className={cx('description')}>tags</div>
           <input
             name="tags"
-            placeholder="태그를 입력하세요 (쉼표로 구분)"
+            placeholder="Please give tags (Comma Separated)"
             value={tags}
             onChange={handleChange}
           />
