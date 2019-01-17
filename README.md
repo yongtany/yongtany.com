@@ -1,8 +1,8 @@
-# nomadYong
+# Yongtany
 
 > nomadYong is a blog platform for my studies. It provides compfy markdown editor with syntax highlighter enabled. Currently, the service is only available to me.
 
-https://nomadyong.io
+https://yongtany.com
 
 ## Project Stack
 

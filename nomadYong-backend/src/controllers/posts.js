@@ -121,5 +121,13 @@ module.exports = {
     } catch(e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
+  },
+  tagList : async (req, res) => {
+    try {
+      const posts = await Post.find();
+      const tagList = [];
+    } catch(e) {
+      return res.status(HTTPStatus.BAD_REQUEST).json(e);
+    }
   }
 }
