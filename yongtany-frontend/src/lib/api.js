@@ -5,8 +5,8 @@ import queryString from 'query-string';
 export const writePost = (formData, token) => axios.post('/posts/', formData, {headers: {'Authorization': `${token}`, 'content-type': 'multipart/form-data'}});
 export const getPost = (id) => axios.get(`/posts/${id}`);
 export const getPostList = ({ tag, page }) => axios.get(`/posts/?${queryString.stringify({ tag, page })}`);
-export const editPost = ({id, title, body, tags}) => axios.patch(`/posts/${id}`, { title, body, tags });
-export const removePost = (id) => axios.delete(`/posts/${id}`);
+export const editPost = ({id, formData, token}) => axios.patch(`/posts/${id}`, formData, {headers: {'Authorization': `${token}`, 'content-type': 'multipart/form-data'}});
+export const removePost = (id, token) => axios.delete(`/posts/${id}`, {headers: {'Authorization': `${token}`}});
 
 
 // About User

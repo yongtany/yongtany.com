@@ -81,7 +81,7 @@ class EditorPane extends Component {
 
   render() {
     const { handleChange } = this;
-    const { tags, title, postImage, onSubmit } = this.props;
+    const { tags, title, postImage, onSubmit, isEdit } = this.props;
 
 
     return (
@@ -94,7 +94,7 @@ class EditorPane extends Component {
             onChange={this.handleFileChange}
             className={cx('imageBtn')}
           />
-          <input type="submit" value="SUBMIT" name="Submit" className={cx('submitBtn')} />
+          <input type="submit" value={isEdit ? "EDIT" : "SUBMIT"} name="Submit" className={cx('submitBtn')} />
         </div>
         <input
           className={cx('title')}

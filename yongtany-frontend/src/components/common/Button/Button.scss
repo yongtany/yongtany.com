@@ -11,7 +11,7 @@
     user-select: none; // 드래그 방지
     display: inline-flex;
 
-    // default 파란색 버튼
+    // default 회색 버튼
     &.default {
         background: $oc-gray-6;
         &:hover {
@@ -22,14 +22,14 @@
         }
     }
 
-    // gray: 회색 버튼
-    &.gray {
-        background: $oc-gray-7;
+    // red: 빨강 버튼
+    &.red {
+        background: $oc-red-7;
         &:hover {
-            background: $oc-gray-6;
+            background: $oc-red-6;
         }
         &:active {
-            background: $oc-gray-7;
+            background: $oc-red-7;
         }
     }
 

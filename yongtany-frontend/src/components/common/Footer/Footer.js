@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 const Footer = () => (
     <div className={cx('footer')}>
-        <Link to="/" className={cx('brand')}>nomadYong</Link>
+        <Link to="/" className={cx('brand')}>yongtany</Link>
     </div>
 );
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import PageTemplate from 'components/common/PageTemplate';
-import Post from '../containers/post/Post';
+import PostPageWrapper from 'components/post/PostPageWrapper';
+import PostWrapper from 'components/post/PostWrapper';
+import Post from 'containers/post/Post';
+import RecomPostList from 'components/list/RecomPostList/RecomPostList';
 
 
 const PostPage = ({match}) => {
@@ -8,7 +11,12 @@ const PostPage = ({match}) => {
   return (
     <div>
       <PageTemplate>
-        <Post id={id} />
+        <PostPageWrapper>
+          <PostWrapper>
+            <Post id={id} />
+          </PostWrapper>
+          <RecomPostList />
+        </PostPageWrapper>
       </PageTemplate>
     </div>
   );
