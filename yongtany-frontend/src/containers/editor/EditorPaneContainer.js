@@ -49,7 +49,12 @@ class EditorPaneContainer extends Component {
       // id가 존재하면 editPost 호출
       const { id } = queryString.parse(location.search);
       if(id) {
-        await EditorActions.editPost({id, formData});
+        var object = {};
+        formData.forEach(function(value, key){
+            object[key] = value;
+        });
+        var jsonObject = JSON.stringify(object);
+        await EditorActions.editPost(id, jsonObject, token);
         history.push(`/post/${id}`);
         return;
     }

@@ -85,7 +85,7 @@ class EditorPane extends Component {
 
 
     return (
-      <form className={cx('editor-pane')} onSubmit={onSubmit} enctype="multipart/form-data">
+      <form className={cx('editor-pane')} onSubmit={onSubmit} encType="multipart/form-data">
         <div className={cx('eidtor-bar')}>
           <span className={cx('image-label')}>Title Image</span>
           <input
