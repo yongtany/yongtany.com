@@ -54,7 +54,7 @@ class EditorPaneContainer extends Component {
             object[key] = value;
         });
         const jsonObject = JSON.stringify(object);
-        console.log(jsonObject);
+
         await EditorActions.editPost(id, jsonObject, token);
         history.push(`/post/${id}`);
         return;

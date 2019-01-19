@@ -10,8 +10,8 @@ const Landing = () => (
   <div className={cx('landing')}>
     <img src={Myface} alt={'myface'} />
     <h1 className={cx('lg-heading')}>
-        NomadYong
-        <span className={cx('text-secondary')}>'s blog</span>
+        Yongtany
+        <span className={cx('text-secondary')}> 's blog</span>
     </h1>
     <h2 className={cx('sm-heading')}>
         Developer, Designer &

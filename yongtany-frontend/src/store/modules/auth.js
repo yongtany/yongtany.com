@@ -23,6 +23,7 @@ const initialState = Map({
   isLoggedIn: localStorage.getItem("jwt") ? true : false,
   token: localStorage.getItem("jwt"),
   name: localStorage.getItem('name'),
+  _id : localStorage.getItem('_id'),
   errorMessage: ''
 });
 
@@ -33,12 +34,15 @@ export default handleActions({
     onSuccess: (state, action) => {
       const { token, newUser  } = action.payload.data;
       const name = newUser.name;
+      const id = newUser._id;
 
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
+      localStorage.setItem("_id", id);
       return state.set('isLoggedIn', true)
                   .set('token', token)
-                  .set('name', name);
+                  .set('name', name)
+                  .set('_id', newUser._id)
     },
     onError: (state, action) => {
       return state.set('errorMessage', 'Sign up Faild')
@@ -49,12 +53,15 @@ export default handleActions({
     onSuccess: (state, action) => {
       const { token, user } = action.payload.data;
       const name = user.name;
+      const id = user._id;
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
+      localStorage.setItem("_id", id);
       axios.defaults.headers.common['Authorization'] = action.payload.data.token;
       return state.set('isLoggedIn', true)
                   .set('token', token)
-                  .set('name', name);
+                  .set('name', name)
+                  .set('_id', user._id);
     },
     onError: (state, action) => {
       return state.set('errorMessage', 'Sign in Faild')

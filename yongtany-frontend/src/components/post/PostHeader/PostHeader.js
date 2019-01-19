@@ -7,7 +7,7 @@ import Button from 'components/common/Button';
 
 const cx = classNames.bind(styles);
 
-const PostHeader = ({postId, isLoggedIn}) => (
+const PostHeader = ({postId, isLoggedIn, userId, writerId}) => (
   <div className={cx('post-header')}>
   {isLoggedIn && <div className={cx('buttons')}>
     <div className={cx('button')}>
@@ -18,7 +18,7 @@ const PostHeader = ({postId, isLoggedIn}) => (
     {
 
       // flex를 유지하려고 배열 형태로 렌더링합니다.
-      postId && [
+      userId===writerId &&  [
       <div key="edit" className={cx('button')}>
         <Link to={`/editor?id=${postId}`}>
           <Button>Update</Button>
