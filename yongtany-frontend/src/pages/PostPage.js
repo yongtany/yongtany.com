@@ -3,7 +3,7 @@ import PageTemplate from 'components/common/PageTemplate';
 import PostPageWrapper from 'components/post/PostPageWrapper';
 import PostWrapper from 'components/post/PostWrapper';
 import Post from 'containers/post/Post';
-import RecentPostList from 'components/list/RecentPostList';
+import RecentListContainer from 'containers/list/RecentListContainer';
 
 
 const PostPage = ({match}) => {
@@ -15,7 +15,7 @@ const PostPage = ({match}) => {
           <PostWrapper>
             <Post id={id} />
           </PostWrapper>
-          <RecentPostList />
+          <RecentListContainer />
         </PostPageWrapper>
       </PageTemplate>
     </div>

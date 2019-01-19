@@ -27,7 +27,6 @@
     }
 
     .column {
-      height: 40%;
       img {
         background-position: center;
         background-color: #DBE0E6;
@@ -35,6 +34,7 @@
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
         max-width: 100%;
+
 
         @include media("<large") {
           width: 100%;

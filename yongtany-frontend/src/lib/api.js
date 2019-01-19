@@ -6,7 +6,8 @@ export const writePost = (formData, token) => axios.post('/posts/', formData, {h
 export const getPost = (id) => axios.get(`/posts/${id}`);
 export const getPostList = ({ tag, page }) => axios.get(`/posts/?${queryString.stringify({ tag, page })}`);
 export const editPost = (id, jsonObject, token) => axios.patch(`/posts/${id}`, jsonObject, {headers: {'Authorization': `${token}`, 'Content-Type': 'application/json'}});
-export const removePost = (id, token) => axios.delete(`/posts/${id}`, {headers: {'Authorization': `${token}`, }});
+export const removePost = (id, token) => axios.delete(`/posts/${id}`, {headers: {'Authorization': `${token}`}});
+export const getRecentList = () => axios.get('/posts/recent');
 
 
 // About User

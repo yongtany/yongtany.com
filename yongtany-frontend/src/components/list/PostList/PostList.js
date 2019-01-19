@@ -37,7 +37,6 @@ const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
 
   return (
     <div className={cx('post-list')}>
-
       <div className={cx('header')}>
         <div className={cx('label')}>LATEST BLOG POSTS</div>
         {isLoggedIn ?
@@ -49,7 +48,6 @@ const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
         : null
         }
       </div>
-
         {postList}
         <Pagination page={page} lastPage={lastPage} tag={tag}/>
     </div>

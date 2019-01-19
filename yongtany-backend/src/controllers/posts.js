@@ -76,6 +76,7 @@ module.exports = {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
   },
+
   getPostById: async (req, res) => {
     try{
       const post = await Post.findById(req.params.id).populate('user');
@@ -122,6 +123,7 @@ module.exports = {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
   },
+
   tagList : async (req, res) => {
     try {
       const posts = await Post.find();
@@ -130,9 +132,17 @@ module.exports = {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
   },
+
   getRecentList : async (req, res) => {
     try {
-      const posts = await Post.find(query)
+      const recents = await Post.find()
+        .sort({ _id: -1 })
+        .limit(3)
+        .populate('user')
+        .lean()
+        .exec();
+
+        return res.status(HTTPStatus.OK).json(recents);
     } catch(e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }

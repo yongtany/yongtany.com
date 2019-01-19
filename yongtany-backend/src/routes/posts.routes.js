@@ -16,6 +16,9 @@ router.route('/')
 router.route('/')
   .get(PostsControllers.getPostList);
 
+router.route('/recent')
+  .get(PostsControllers.getRecentList);
+
 router.route('/:id')
   .get(PostsControllers.getPostById);
 

@@ -6,21 +6,13 @@ import { bindActionCreators } from 'redux'
 import * as listActions from 'store/modules/list';
 
 class RecentListContainer extends Component {
-  getPostList = () => {
-    // 페이지와 태그 값을 부모로부터 받아 옵니다.
-    const { tag, page, ListActions } = this.props;
-    ListActions.getPostList({
-      page,
-      tag
-    });
-  }
+
+
 
   componentDidMount() {
-    this.getPostList();
+    const { ListActions } = this.props;
+    ListActions.getRecentList();
   }
-
-
-
 
   render() {
     const { loading, recentPosts } = this.props;

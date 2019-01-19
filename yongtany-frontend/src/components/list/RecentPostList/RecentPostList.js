@@ -2,36 +2,15 @@
 import React from 'react';
 import styles from './RecentPostList.scss';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import Tag from 'components/common/Tag';
-
+import { List } from 'immutable';
 
 const cx = classNames.bind(styles);
 
-const url='https://picsum.photos/740/420/?random';
+const RecentPostList = ({recentPosts= List()}) => {
 
-const RecentPostItem = ({title, postImage, name, tags}) => (
-    <div className={cx('container')}>
-      <div className={cx('recent-item')}>
-        <div className={cx('column')}>
-          <img src={postImage} alt={'photo'} />
-        </div>
-        <div className={cx('column')}>
-          <div className={cx('content')}>
-            <span className={cx('title')}>{title}</span>
-            <span className={cx('author')}>By {name}</span>
-            <div className={cx('tags')}>
-              {/* <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
-              <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
-              <Tag key={''} to={`/tag/${''}`} tag={'#tag'} /> */}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-)
-
-const RecentPostList = ({recentPosts}) => {
   const recentPostList = recentPosts.map(
     (recentPost) => {
       const { _id, title, postImage, tags } = recentPost.toJS();
@@ -58,6 +37,29 @@ const RecentPostList = ({recentPosts}) => {
     </div>
   )
 };
+
+const RecentPostItem = ({title, postImage, name, tags, id}) => (
+    <div className={cx('container')}>
+      <div className={cx('recent-item')}>
+        <div className={cx('column')}>
+          <img src={postImage} alt={'photo'} />
+        </div>
+        <div className={cx('column')}>
+          <div className={cx('content')}>
+            <Link to={`/post/${id}`}><h2 className={cx('title')}>{title}</h2></Link>
+            <span className={cx('author')}>By {name}</span>
+            <div className={cx('tags')}>
+              {/* <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
+              <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
+              <Tag key={''} to={`/tag/${''}`} tag={'#tag'} /> */}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+)
+
+
 
 
 export default RecentPostList;
