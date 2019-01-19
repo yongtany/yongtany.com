@@ -30,7 +30,7 @@ const AboutMyself = () => (
       Besides that, I own a Blog where I teach web development. I try my best to give a good insight into how I think about working with certain problems. I help then getting into Javascript as well with server-side stuff.
       </p>
       <p>
-        When I’m not working I still code some of my personal projects. Programming is more than just a work for me, this is a hobby, it’s a passion. But if I’m not in front of a computer I pass all my time with my beautiful girl friend <span>😃</span>.
+        When I’m not working I still code some of my personal projects. Programming is more than just a work for me, this is a hobby, it’s a passion. But if I’m not in front of a computer I pass all my time with my beautiful girl friend <span role="img" aria-label="Snowman">😃</span>.
       </p>
       <h4>Why having this blog?</h4>
       <p>

@@ -14,6 +14,7 @@ export const getPostList = createAction(GET_POST_LIST, api.getPostList);
 // initial state
 const initialState = Map({
   posts: List(),
+  recentPosts: List(),
   lastPage: null
 });
 
@@ -23,10 +24,12 @@ export default handleActions({
     type: GET_POST_LIST,
     onSuccess: (state, action) => {
       const { data: posts } = action.payload;
+      const recentPosts=posts.slice(0,3);
 
       const lastPage = action.payload.headers['last-page'];
       return state.set('posts', fromJS(posts))
-                  .set('lastPage', parseInt(lastPage, 10));
+                  .set('lastPage', parseInt(lastPage, 10))
+                  .set('recentPosts', fromJS(recentPosts))
     }
-  })
+  }),
 }, initialState)

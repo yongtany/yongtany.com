@@ -41,7 +41,6 @@ class Post extends Component {
     const writerId = post.getIn(['user', '_id']);
     const profile_image = post.getIn(['user', 'profile_image']);
 
-    console.log(_id, writerId);
 
     return (
       <div>

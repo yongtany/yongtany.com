@@ -129,5 +129,12 @@ module.exports = {
     } catch(e) {
       return res.status(HTTPStatus.BAD_REQUEST).json(e);
     }
+  },
+  getRecentList : async (req, res) => {
+    try {
+      const posts = await Post.find(query)
+    } catch(e) {
+      return res.status(HTTPStatus.BAD_REQUEST).json(e);
+    }
   }
 }
