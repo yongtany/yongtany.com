@@ -42,6 +42,7 @@ class EditorPaneContainer extends Component {
     for (var i = 0; i < tag.length; i++) {
       formData.append('tags', tag[i]);
     }
+
     formData.append('postImage', postImage);
     event.preventDefault();
 
@@ -67,8 +68,6 @@ class EditorPaneContainer extends Component {
       console.log(e);
     }
   }
-
-
 
   render() {
     const { title, tags, markdown, postImage } = this.props;

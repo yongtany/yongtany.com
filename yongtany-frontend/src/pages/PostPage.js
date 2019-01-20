@@ -6,6 +6,7 @@ import Post from 'containers/post/Post';
 import RecentListContainer from 'containers/list/RecentListContainer';
 
 
+
 const PostPage = ({match}) => {
   const { id } = match.params;
   return (

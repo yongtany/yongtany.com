@@ -9,7 +9,7 @@ import { List } from 'immutable';
 
 const cx = classNames.bind(styles);
 
-const RecentPostList = ({recentPosts= List()}) => {
+const RecentPostList = ({recentPosts= List(), goPost}) => {
 
   const recentPostList = recentPosts.map(
     (recentPost) => {
@@ -25,6 +25,7 @@ const RecentPostList = ({recentPosts= List()}) => {
           tags={tags}
           key={_id}
           id={_id}
+          link={goPost}
         />
       )
     }
@@ -38,7 +39,7 @@ const RecentPostList = ({recentPosts= List()}) => {
   )
 };
 
-const RecentPostItem = ({title, postImage, name, tags, id}) => (
+const RecentPostItem = ({title, postImage, name, tags, id, link }) => (
     <div className={cx('container')}>
       <div className={cx('recent-item')}>
         <div className={cx('column')}>
@@ -46,7 +47,7 @@ const RecentPostItem = ({title, postImage, name, tags, id}) => (
         </div>
         <div className={cx('column')}>
           <div className={cx('content')}>
-            <Link to={`/post/${id}`}><h2 className={cx('title')}>{title}</h2></Link>
+            <a href={`/post/${id}`}><h2 className={cx('title')}>{title}</h2></a>
             <span className={cx('author')}>By {name}</span>
             <div className={cx('tags')}>
               {/* <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />

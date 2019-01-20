@@ -4,10 +4,10 @@ import Loading from 'components/common/Loading';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as listActions from 'store/modules/list';
+import { withRouter } from 'react-router-dom';
+import queryString from 'query-string';
 
 class RecentListContainer extends Component {
-
-
 
   componentDidMount() {
     const { ListActions } = this.props;
@@ -34,4 +34,4 @@ export default connect(
   (dispatch) => ({
     ListActions: bindActionCreators(listActions, dispatch)
   })
-)(RecentListContainer);
+)(withRouter(RecentListContainer));
