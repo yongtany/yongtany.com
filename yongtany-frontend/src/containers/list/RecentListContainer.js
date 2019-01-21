@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as listActions from 'store/modules/list';
 import { withRouter } from 'react-router-dom';
-import queryString from 'query-string';
 
 class RecentListContainer extends Component {
 

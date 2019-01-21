@@ -2,9 +2,6 @@
 import React from 'react';
 import styles from './RecentPostList.scss';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
-
-import Tag from 'components/common/Tag';
 import { List } from 'immutable';
 
 const cx = classNames.bind(styles);
@@ -49,11 +46,6 @@ const RecentPostItem = ({title, postImage, name, tags, id, link }) => (
           <div className={cx('content')}>
             <a href={`/post/${id}`}><h2 className={cx('title')}>{title}</h2></a>
             <span className={cx('author')}>By {name}</span>
-            <div className={cx('tags')}>
-              {/* <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
-              <Tag key={''} to={`/tag/${''}`} tag={'#tag'} />
-              <Tag key={''} to={`/tag/${''}`} tag={'#tag'} /> */}
-            </div>
           </div>
         </div>
       </div>

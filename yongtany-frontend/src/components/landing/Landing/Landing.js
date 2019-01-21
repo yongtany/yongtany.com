@@ -27,7 +27,7 @@ const Landing = () => (
         <a href="https://www.instagram.com/yong_tany/" className={cx('icon')}>
             <i className={cx('fab fa-instagram fa-2x')}></i>
         </a>
-        <a href="https://github.com/nomad-yong" className={cx('icon')}>
+        <a href="https://github.com/yongtany" className={cx('icon')}>
             <i className={cx('fab fa-github fa-2x')}></i>
         </a>
     </div>

@@ -55,6 +55,9 @@
       .right {
         // 오른쪽 내용
         margin-left: auto;
+        &:hover {
+          color: $oc-gray-5;
+        }
         @include media("<medium") {
           display: none;
         }
