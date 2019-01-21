@@ -37,7 +37,7 @@ class EditorPaneContainer extends Component {
     const formData = new FormData();
     formData.append('title', title);
     formData.append('body', markdown);
-    const tag = tags.split(",");
+    const tag = tags.split(", ");
 
     for (var i = 0; i < tag.length; i++) {
       formData.append('tags', tag[i]);
@@ -49,14 +49,17 @@ class EditorPaneContainer extends Component {
     try {
       // id가 존재하면 editPost 호출
       const { id } = queryString.parse(location.search);
-      if(id) {
-        const object = {};
-        formData.forEach(function(value, key){
-            object[key] = value;
-        });
-        const jsonObject = JSON.stringify(object);
+      // Display the key/value pairs
 
-        await EditorActions.editPost(id, jsonObject, token);
+      if(id) {
+        const object = {
+          'title' : formData.get('title'),
+          'body' : formData.get('body'),
+          'tags' : formData.getAll('tags'),
+          'postIamge': formData.get('postImage')
+        };
+
+        await EditorActions.editPost(id, object, token);
         history.push(`/post/${id}`);
         return;
     }
