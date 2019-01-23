@@ -7,7 +7,7 @@ import Button from 'components/common/Button';
 
 const cx = classNames.bind(styles);
 
-const PostHeader = ({postId, isLoggedIn, userId, writerId}) => (
+const PostHeader = ({postId, isLoggedIn, userId, writerId, onRemove }) => (
   <div className={cx('post-header')}>
   {isLoggedIn && <div className={cx('buttons')}>
     <div className={cx('button')}>
@@ -25,9 +25,7 @@ const PostHeader = ({postId, isLoggedIn, userId, writerId}) => (
         </Link>
       </div>,
       <div key="remove" className={cx('button')}>
-        <Link to="/editor">
-          <Button theme="red">Delete</Button>
-        </Link>
+        <Button theme="red" onClick={onRemove}>Delete</Button>
       </div>
       ]
     }

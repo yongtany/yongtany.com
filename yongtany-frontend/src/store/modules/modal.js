@@ -22,11 +22,11 @@ const initialState = Map({
 // reducer
 export default handleActions({
   [SHOW_MODAL]: (state, action) => {
-    const { palyload: modalName } = action;
-    return state.setIn('modal', modalName, true);
+    const { payload: modalName } = action;
+    return state.setIn(['modal', modalName], true);
   },
   [HIDE_MODAL]: (state, action) => {
-    const { palyload: modalName } = action;
-    return state.setIn('modal', modalName, false);
-  }
+    const { payload: modalName } = action;
+    return state.setIn(['modal', modalName], false);
+  },
 }, initialState);

@@ -7,6 +7,7 @@ import PostBody from 'components/post/PostBody';
 import Loading from 'components/common/Loading';
 
 import * as postActions from 'store/modules/post';
+import * as modalActions from 'store/modules/modal';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -28,8 +29,14 @@ class Post extends Component {
     window.scrollTo(0,0);
   }
 
+  handleRemove = () => {
+    const { ModalActions } = this.props;
+    ModalActions.showModal('remove');
+  }
+
   render() {
     const { loading, post, isLoggedIn, match, _id } = this.props;
+    const { handleRemove } = this;
 
     const { id } = match.params;
 
@@ -49,6 +56,7 @@ class Post extends Component {
           userId={_id}
           postId={id}
           writerId={writerId}
+          onRemove={handleRemove}
         />
         <PostInfo
           title={title}
@@ -73,6 +81,7 @@ export default connect(
     _id: state.auth.get('_id'),
   }),
   (dispatch) => ({
-    PostActions: bindActionCreators(postActions, dispatch)
+    PostActions: bindActionCreators(postActions, dispatch),
+    ModalActions: bindActionCreators(modalActions, dispatch)
   })
 )(withRouter(Post));
