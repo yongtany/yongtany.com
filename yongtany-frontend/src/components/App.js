@@ -7,7 +7,8 @@ import {
   EditorPage,
   NotFoundPage,
   AuthPage,
-  AboutPage
+  AboutPage,
+  ProfilePage
 } from 'pages';
 
 
@@ -37,6 +38,7 @@ const PrivateRoutes = (props) => (
     <Route path="/post/:id" component={PostPage}/>
     <Route path="/editor" component={EditorPage}/>
     <Route path="/about" component={AboutPage}/>
+    <Route path="/profile" component={ProfilePage}/>
     <Route component={NotFoundPage}/>
   </Switch>
 );

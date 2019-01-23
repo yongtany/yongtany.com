@@ -7,17 +7,17 @@ import Myface from 'images/myFace.jpeg';
 const cx = classNames.bind(styles);
 
 const Landing = () => (
-  <div className={cx('landing')}>
+  <div className={cx('landing-board')}>
     <img src={Myface} alt={'myface'} />
-    <h1 className={cx('lg-heading')}>
+    <h1 className={cx('heading')}>
         Yongtany
         <span className={cx('text-secondary')}> 's blog</span>
     </h1>
-    <h2 className={cx('sm-heading')}>
+    <h2 className={cx('bio')}>
         Developer, Designer &
         Univ. student
     </h2>
-    <div className={cx('icons')}>
+    <div className={cx('conn-icons')}>
         <a href="http://dev-yong.tistory.com/" className={cx('icon')}>
             <i className={cx('fab fa-blogger fa-2x')}></i>
         </a>

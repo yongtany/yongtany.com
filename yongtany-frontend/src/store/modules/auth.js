@@ -24,6 +24,7 @@ const initialState = Map({
   token: localStorage.getItem("jwt"),
   name: localStorage.getItem('name'),
   _id : localStorage.getItem('_id'),
+  profile_image: localStorage.getItem('profile_image'),
   errorMessage: ''
 });
 
@@ -33,15 +34,16 @@ export default handleActions({
     type: AUTH_SIGN_UP,
     onSuccess: (state, action) => {
       const { token, newUser  } = action.payload.data;
-      const name = newUser.name;
-      const id = newUser._id;
+      const { name, profile_image, id } = newUser;
 
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
       localStorage.setItem("_id", id);
+      localStorage.setItem("profile_image", profile_image);
       return state.set('isLoggedIn', true)
                   .set('token', token)
                   .set('name', name)
+                  .set('profile_image', profile_image)
                   .set('_id', newUser._id)
     },
     onError: (state, action) => {
@@ -52,15 +54,16 @@ export default handleActions({
     type: AUTH_SIGN_IN,
     onSuccess: (state, action) => {
       const { token, user } = action.payload.data;
-      const name = user.name;
-      const id = user._id;
+      const { name, profile_image, id } = user
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
       localStorage.setItem("_id", id);
+      localStorage.setItem("profile_image", profile_image);
       axios.defaults.headers.common['Authorization'] = action.payload.data.token;
       return state.set('isLoggedIn', true)
                   .set('token', token)
                   .set('name', name)
+                  .set('profile_image', profile_image)
                   .set('_id', user._id);
     },
     onError: (state, action) => {
@@ -71,6 +74,8 @@ export default handleActions({
     localStorage.clear();
     return state.set('isLoggedIn', false)
                 .set('name', null)
-                .set('token', null);
+                .set('token', null)
+                .set('_id', null)
+                .set('profile_image', null)
   },
 }, initialState);

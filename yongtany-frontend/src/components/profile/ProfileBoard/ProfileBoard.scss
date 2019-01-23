@@ -1,6 +1,6 @@
 @import 'styles/utils.scss';
 
-.landing-board {
+.profile-board {
   background-color: white;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
   margin: 0 auto;
@@ -8,21 +8,26 @@
   text-align: center;
   padding: 1rem;
 
-  .heading {
+  .welcome {
+    color: $oc-gray-8;
+    font-size: 1.5rem;
+    font-weight: 300;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: 200;
 
-    .text-secondary {
-      color: $oc-gray-8;
-      font-size: 1.5rem;
+    .name {
+      font-weight: 200;
+      font-size: 2rem;
+    }
+    .icon {
+      margin-left: 1rem;
     }
   }
 
   .bio {
     font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
-    font-size: 1rem;
-    color: $oc-gray-8;
+    font-weight: 200;
+    font-size: 1.2rem;
+    color: $oc-gray-6;
   }
 
   img {
@@ -30,17 +35,8 @@
     height: 9rem;
     border-radius: 100%;
     align-content: center;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.08);
   }
-
-    .conn-icons {
-        margin-top: 1rem;
-         .icon{
-            padding: 0.4rem;
-            &:hover {
-                color: gray;
-            }
-        }
-    }
 
     width: 800px;
     @include media("<large") { width : 768px; }

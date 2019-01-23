@@ -61,6 +61,16 @@
         @include media("<medium") {
           display: none;
         }
+
+        img {
+          width: 2.8rem;
+          border-radius: 100%;
+          margin-top: 0.3rem;
+
+          &:hover {
+            @include material-shadow(2, 0.5);
+          }
+        }
       }
     }
   }

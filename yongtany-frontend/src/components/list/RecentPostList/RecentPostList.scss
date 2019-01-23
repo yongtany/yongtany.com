@@ -77,6 +77,12 @@
   }
 
   @include media("<large") {
+    width: 50%;
+    margin-top: 3rem;
+    margin-left: 0;
+  }
+
+  @include media("<medium") {
     width: 70%;
     margin-top: 3rem;
     margin-left: 0;

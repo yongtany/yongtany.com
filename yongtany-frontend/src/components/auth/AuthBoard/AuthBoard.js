@@ -15,7 +15,7 @@ const AuthBoard = (props) => (
         <img src={require('images/logo.png')} alt="welome" />
       </Link>
       <p className={cx('auth-title')}>
-        Join with NomadYong
+        Join with Yongtany
       </p>
     </div>
     <div className={cx('auth-content')}>

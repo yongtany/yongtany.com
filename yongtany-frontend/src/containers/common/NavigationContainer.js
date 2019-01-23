@@ -15,11 +15,13 @@ class NavigationContainer extends Component {
   }
 
   render() {
-    const { isLoggedIn} = this.props;
+    const { isLoggedIn, profile_image, name} = this.props;
 
     return (
       <Navigation
         isLoggedIn={isLoggedIn}
+        profile_image={profile_image}
+        name={name}
         signOut={this.handleSignOut}
       />
     )
@@ -29,6 +31,7 @@ class NavigationContainer extends Component {
 export default connect(
   (state) => ({
     isLoggedIn: state.auth.get('isLoggedIn'),
+    profile_image: state.auth.get('profile_image'),
     name: state.auth.get('name')
   }),
   (dispatch) => ({

@@ -12,9 +12,9 @@ const Navigation = (props) => (
               <div className={cx('column')}>
                   <Link to="/">
                       <img
-                          src={require("images/logo.png")}
-                          className={cx('logo')}
-                          alt="Logo"
+                        src={require("images/logo.png")}
+                        className={cx('logo')}
+                        alt="Logo"
                       />
                   </Link>
               </div>
@@ -41,9 +41,21 @@ const Navigation = (props) => (
                     </Link>
                   </div>
                   {props.isLoggedIn ?
-                  <div className={cx('right')} onClick={props.signOut}>
-                    <Link to='/auth'>
-                      Sign out
+                  <div className={cx('right')}>
+                    <Link to='/profile'>
+                    {props.profile_image ?
+                      <img
+                      src={props.profile_image}
+                      alt={props.name}
+                      className={cx('profile_image')}
+                      />
+                     :
+                    <img
+                      src={require('images/nonImage.jpeg')}
+                      alt='Add profile_image'
+                      className={cx('profile_image')}
+                      />
+                    }
                     </Link>
                   </div>
                   :
@@ -53,7 +65,6 @@ const Navigation = (props) => (
                     </Link>
                   </div>
                   }
-
               </div>
           </div>
       </div>
