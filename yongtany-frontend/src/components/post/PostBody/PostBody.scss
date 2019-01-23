@@ -3,6 +3,7 @@
 .post-body {
   margin: 10px;
   margin-right: 30px;
+  transform: translateY(-2rem);
   .paper {
     padding: 2rem;
     padding-top: 2.5rem;
@@ -12,7 +13,6 @@
     margin: 0 auto;
     min-height: 10rem;
     margin-top: 5rem;
-    transform: translateY(-1.5rem);
 
 
     // 해상도에 따라 다른 width를 설정

@@ -1,17 +1,22 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
-import formStyles from 'styles/formStyles.scss'
+import styles from 'styles/formStyles.scss'
+
+import classNames from 'classnames/bind';
 
 import * as keys from 'lib/keys';
 
 
+const cx = classNames.bind(styles);
+
+
 const LoginForm = (props) => (
-  <div className={formStyles.formComponent}>
-        <form className={formStyles.form} onSubmit={props.handleSubmit} >
+  <div className={cx('formComponent')}>
+        <form className={cx('form')} onSubmit={props.handleSubmit} >
             <input
                 type="text"
-                className={formStyles.textInput}
+                className={cx('textInput')}
                 placeholder="Email"
                 value={props.emailValue}
                 onChange={props.handleInputChange}
@@ -19,7 +24,7 @@ const LoginForm = (props) => (
             />
             <input
                 type="password"
-                className={formStyles.textInput}
+                className={cx('textInput')}
                 placeholder="Password"
                 value={props.passwordValue}
                 onChange={props.handleInputChange}
@@ -28,24 +33,24 @@ const LoginForm = (props) => (
             <input
                 type="submit"
                 value="Log in"
-                className={formStyles.button}
+                className={cx('button')}
             />
         </form>
-        <span className={formStyles.divider}>or</span>
+        <span className={cx('divider')}>or</span>
         <span>
           <FacebookLogin
             appId={keys.FACEBOOK_CLIENT_ID}
             autoLoad={false}
             fields="name,email,picture"
             callback={props.facebookLogin}
-            cssClass={formStyles.facebookLogin}
+            cssClass={cx('facebookLogin')}
             icon="fab fa-facebook-square"
           />
           <GoogleLogin
             clientId={keys.GOOGLE_CLIENT_ID}
             render={renderProps => (
-              <button className={formStyles.googleLogin} onClick={renderProps.onClick}>
-                <i className={'fab fa-google'}></i>Login with Google
+              <button className={cx('googleLogin')} onClick={renderProps.onClick}>
+                <i className={cx('fab fa-google')}></i>Login with Google
               </button>
             )}
             buttonText="Login with Google"
@@ -54,7 +59,7 @@ const LoginForm = (props) => (
           />
         </span>
         <br />
-        <span className={formStyles.forgotLink}>
+        <span className={cx('forgotLink')}>
             Forgot password?
         </span>
     </div>

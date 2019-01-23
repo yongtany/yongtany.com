@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './PostList.scss';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
 
 import PostItem from 'components/list/PostItem';
 import Pagination from 'components/list/Pagination';
@@ -39,14 +38,15 @@ const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
     <div className={cx('post-list')}>
       <div className={cx('header')}>
         <div className={cx('label')}>LATEST BLOG POSTS</div>
+        <div className={cx('write')}>
         {isLoggedIn ?
-          <div className={cx('button')}>
-            <Link to="/editor">
-              <Button>Write post</Button>
-            </Link>
-          </div>
+          <Button to={'/editor'}>
+            Write post
+          </Button>
+
         : null
         }
+        </div>
       </div>
         {postList}
         <Pagination page={page} lastPage={lastPage} tag={tag}/>

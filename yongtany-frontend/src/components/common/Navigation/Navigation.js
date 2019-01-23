@@ -7,7 +7,7 @@ import styles from './Navigation.scss';
 const cx = classNames.bind(styles);
 
 const Navigation = (props) => (
-        <div className={styles.navigation}>
+        <div className={cx('navigation')}>
           <div className={cx('inner')}>
               <div className={cx('column')}>
                   <Link to="/">

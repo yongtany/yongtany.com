@@ -1,25 +1,30 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import {GoogleLogin} from 'react-google-login';
-import formStyles from 'styles/formStyles.scss'
+import styles from 'styles/formStyles.scss'
+
+import classNames from 'classnames/bind';
 
 import * as keys from 'lib/keys';
 
+
+const cx = classNames.bind(styles);
+
 const SignupForm = (props) => (
-  <div className={formStyles.formComponent}>
+  <div className={cx('formComponent')}>
         <FacebookLogin
             appId={keys.FACEBOOK_CLIENT_ID}
             autoLoad={false}
             fields="name,email,picture"
             callback={props.facebookLogin}
-            cssClass={formStyles.facebookLogin}
+            cssClass={cx('facebookLogin')}
             icon="fab fa-facebook-square"
           />
         <GoogleLogin
             clientId={keys.GOOGLE_CLIENT_ID}
             render={renderProps => (
-              <button className={formStyles.googleLogin} onClick={renderProps.onClick}>
-                <i className={'fab fa-google'}></i>Login with Google
+              <button className={cx('googleLogin')} onClick={renderProps.onClick}>
+                <i className={cx('fab fa-google')}></i>Login with Google
               </button>
             )}
             buttonText="Login with Google"
@@ -27,16 +32,16 @@ const SignupForm = (props) => (
             // onFailure={responseGoogle}
           />
 
-        <span className={formStyles.divider}>or</span>
+        <span className={cx('divider')}>or</span>
         <form
-          className={formStyles.form}
+          className={cx('form')}
           onSubmit={props.handleSubmit }
           method="post"
         >
             <input
                 type="email"
                 placeholder="Email"
-                className={formStyles.textInput}
+                className={cx('textInput')}
                 value={props.emailValue}
                 onChange={props.handleInputChange}
                 name="email"
@@ -44,7 +49,7 @@ const SignupForm = (props) => (
             <input
                 type="text"
                 placeholder="Name"
-                className={formStyles.textInput}
+                className={cx('textInput')}
                 value={props.nameValue}
                 onChange={props.handleInputChange}
                 name="name"
@@ -52,7 +57,7 @@ const SignupForm = (props) => (
             <input
                 type="username"
                 placeholder="Username"
-                className={formStyles.textInput}
+                className={cx('textInput')}
                 value={props.usernameValue}
                 onChange={props.handleInputChange}
                 name="username"
@@ -60,7 +65,7 @@ const SignupForm = (props) => (
             <input
                 type="password"
                 placeholder="Password"
-                className={formStyles.textInput}
+                className={cx('textInput')}
                 value={props.passwordValue}
                 onChange={props.handleInputChange}
                 name="password"
@@ -68,7 +73,7 @@ const SignupForm = (props) => (
             <input
                 type="submit"
                 value="Sign up"
-                className={formStyles.button}
+                className={cx('button')}
             />
         </form>
     </div>

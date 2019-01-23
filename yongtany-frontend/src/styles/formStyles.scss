@@ -24,17 +24,16 @@
         border: 1px solid #b2b2b2;
       }
     }
-  }
-  .button {
-    @include grayButton();
-    i {
-      font-size: 18px;
-      margin-right: 5px;
-    }
-    svg {
-      margin-right: 10px;
+    .button {
+      @include grayButton();
+      i {
+        font-size: 18px;
+        margin-right: 5px;
+      }
+      text-align: center;
     }
   }
+
   .divider {
     text-transform: uppercase;
     color: #999;

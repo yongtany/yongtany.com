@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
 import styles from './RecentPostList.scss';
 import classNames from 'classnames/bind';
@@ -36,11 +35,10 @@ const RecentPostList = ({recentPosts= List(), goPost}) => {
   )
 };
 
-const RecentPostItem = ({title, postImage, name, tags, id, link }) => (
-    <div className={cx('container')}>
+const RecentPostItem = ({title, postImage, name, id }) => (
       <div className={cx('recent-item')}>
         <div className={cx('column')}>
-          <img src={postImage} alt={'photo'} />
+          <img src={postImage} alt={name} />
         </div>
         <div className={cx('column')}>
           <div className={cx('content')}>
@@ -49,7 +47,6 @@ const RecentPostItem = ({title, postImage, name, tags, id, link }) => (
           </div>
         </div>
       </div>
-    </div>
 )
 
 

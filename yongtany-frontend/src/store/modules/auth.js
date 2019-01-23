@@ -34,17 +34,17 @@ export default handleActions({
     type: AUTH_SIGN_UP,
     onSuccess: (state, action) => {
       const { token, newUser  } = action.payload.data;
-      const { name, profile_image, id } = newUser;
+      const { name, profile_image, _id } = newUser;
 
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
-      localStorage.setItem("_id", id);
+      localStorage.setItem("_id", _id);
       localStorage.setItem("profile_image", profile_image);
       return state.set('isLoggedIn', true)
                   .set('token', token)
                   .set('name', name)
                   .set('profile_image', profile_image)
-                  .set('_id', newUser._id)
+                  .set('_id', _id)
     },
     onError: (state, action) => {
       return state.set('errorMessage', 'Sign up Faild')
@@ -54,17 +54,17 @@ export default handleActions({
     type: AUTH_SIGN_IN,
     onSuccess: (state, action) => {
       const { token, user } = action.payload.data;
-      const { name, profile_image, id } = user
+      const { name, profile_image, _id } = user
       localStorage.setItem("jwt", token);
       localStorage.setItem("name", name);
-      localStorage.setItem("_id", id);
+      localStorage.setItem("_id", _id);
       localStorage.setItem("profile_image", profile_image);
       axios.defaults.headers.common['Authorization'] = action.payload.data.token;
       return state.set('isLoggedIn', true)
                   .set('token', token)
                   .set('name', name)
                   .set('profile_image', profile_image)
-                  .set('_id', user._id);
+                  .set('_id', _id);
     },
     onError: (state, action) => {
       return state.set('errorMessage', 'Sign in Faild')
