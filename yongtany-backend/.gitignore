@@ -1,9 +1,0 @@
-node_modules/
-
-## config/dev.js
-## oauth keys, jwt_scret and mongoURI
-dev.js
-
-
-## uploads
-uploads
