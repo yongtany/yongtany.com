@@ -8,6 +8,9 @@ const cx = classNames.bind(styles);
 const Footer = () => (
     <div className={cx('footer')}>
         <Link to="/" className={cx('brand')}>yongtany</Link>
+        <div className={cx('copyright')}>
+        Copyright &copy; {new Date().getFullYear()} yongtany
+        </div>
     </div>
 );
 

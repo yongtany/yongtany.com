@@ -1,6 +1,6 @@
 # Yongtany
 
-> nomadYong is a blog platform for my studies. It provides compfy markdown editor with syntax highlighter enabled. Currently, the service is only available to me.
+> Yongtany is a blog platform for my studies. It provides compfy markdown editor with syntax highlighter enabled. Currently, the service is only available to me.
 
 https://yongtany.herokuapp.com/
 
