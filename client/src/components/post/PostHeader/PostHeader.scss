@@ -1,0 +1,15 @@
+@import 'styles/utils.scss';
+
+.post-header {
+  margin: 1px;
+  margin-right: 20px;
+
+  .buttons {
+    display: flex;
+    .button1 {
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin: 1rem;
+    }
+  }
+}

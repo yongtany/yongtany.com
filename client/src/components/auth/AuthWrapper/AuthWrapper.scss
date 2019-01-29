@@ -1,0 +1,14 @@
+@import 'styles/utils.scss';
+
+.auth-wrapper {
+  main {
+    background: $oc-gray-1;
+    min-height: calc(100vh);
+    margin: 0 auto;
+    align-content: center;
+
+    @include media("<large") {
+      width: 100%;
+    }
+  }
+}

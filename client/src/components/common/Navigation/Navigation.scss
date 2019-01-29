@@ -1,0 +1,77 @@
+@import 'styles/utils.scss';
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  border-bottom: 1.5px solid $oc-gray-4;
+
+  .inner {
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 77px;
+    padding: 25px 40px;
+
+    .column {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 33%;
+
+      &:first-child {
+        justify-content: flex-start;
+      }
+      &:last-child {
+        justify-content: flex-end;
+      }
+      .logo {
+        max-width: 4rem;
+      }
+
+      .searchInput {
+        max-width: 215px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        border: solid 1px #dbdbdb;
+        border-radius: 3px;
+        background-color: #fafafa;
+        font-size: 1rem;
+        font-weight: 300;
+        margin-right: 15px;
+        &::placeholder {
+          color: $oc-gray-4;
+        }
+        &:focus {
+          outline: none;
+          background-color: white;
+        }
+      }
+
+      .right {
+        // 오른쪽 내용
+        margin-left: auto;
+        &:hover {
+          color: $oc-gray-5;
+        }
+        @include media("<medium") {
+          display: none;
+        }
+
+        img {
+          width: 2.8rem;
+          border-radius: 100%;
+          margin-top: 0.3rem;
+
+          &:hover {
+            @include material-shadow(2, 0.5);
+          }
+        }
+      }
+    }
+  }
+}

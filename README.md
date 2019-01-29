@@ -2,7 +2,7 @@
 
 > nomadYong is a blog platform for my studies. It provides compfy markdown editor with syntax highlighter enabled. Currently, the service is only available to me.
 
-https://yongtany.com
+https://yongtany.herokuapp.com/
 
 ## Project Stack
 
@@ -28,6 +28,7 @@ Following items are core backend technologies used in this project:
 - Node.js
 - express
 - mongoDB
-- mongoose
+- mongoose,
+- cloudinary(image storage)
 - hearoku(deploy)
 - TypeScript (on SSR)

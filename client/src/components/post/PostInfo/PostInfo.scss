@@ -1,0 +1,45 @@
+@import 'styles/utils.scss';
+
+.post-info {
+  margin: 10px;
+  margin-right: 30px;
+  .info {
+    @include material-shadow(4, 0.5);
+    margin: 0 auto;
+    min-height: 10rem;
+    background-size: cover;
+
+    .info-overlay {
+      padding: 2rem;
+      background-color: rgba(0,0,0,0.6);
+      min-height: 10rem;
+      color: white;
+      font-style: oblique;
+
+      .title {
+        font-size: 2rem;
+        font-weight: 400;
+        word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
+      }
+
+      .sub {
+        font-size: 1rem;
+        word-wrap: break-word; // 내용이 너무 길면 다음 줄에 작성
+        text-align: right;
+        opacity: 0.5;
+        margin-top: 1rem;
+      }
+
+      .tags {
+        margin-top: 1rem;
+      }
+    }
+
+
+
+    // 해상도에 따라 다른 width를 설정
+    @include media("<large") { width : 768px; }
+    @include media("<medium") { width: 100%;
+      margin-left: 0.5rem;}
+  }
+}

@@ -1,0 +1,18 @@
+@import 'styles/utils.scss';
+
+.landing-wrapper {
+  margin: 0 auto;
+  margin-top: 5rem;
+  align-content: center;
+
+  display: flex;
+
+  width: 800px;
+    @include media("<large") { width : 768px; }
+    @include media("<medium") {
+      width: 100%;
+      text-align: center;
+      flex-direction: column;
+      padding-left: 5rem;
+    }
+}

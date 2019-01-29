@@ -1,0 +1,20 @@
+@import 'styles/utils.scss';
+
+.sub-wrapper {
+  width: 75%;
+  margin: 0 auto;
+  padding-left: 3rem;
+
+
+
+  @include media("<large") {
+    width: 100%;
+  }
+  @include media("<medium") {
+    text-align: center;
+    width: 30rem;
+    padding-right: 10rem;
+    transform: translateX(-4rem);
+    margin-bottom: 3rem;
+  }
+}
