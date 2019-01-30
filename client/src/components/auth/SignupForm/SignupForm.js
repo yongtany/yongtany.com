@@ -5,7 +5,7 @@ import styles from 'styles/formStyles.scss'
 
 import classNames from 'classnames/bind';
 
-import * as keys from 'lib/provider';
+import * as keys from 'config/provider';
 
 
 const cx = classNames.bind(styles);

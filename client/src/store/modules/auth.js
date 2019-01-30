@@ -1,5 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
-import * as api from 'lib/api';
+import * as api from 'config/api';
 import axios from 'axios';
 
 import { Map } from 'immutable';

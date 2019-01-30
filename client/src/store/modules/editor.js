@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { Map } from 'immutable';
 import { pender } from 'redux-pender';
-import * as api from 'lib/api';
+import * as api from 'config/api';
 
 // action types
 const INITIALIZE = 'editor/INITIALIZE';

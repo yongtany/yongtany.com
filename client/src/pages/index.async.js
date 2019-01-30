@@ -1,4 +1,4 @@
-import asyncComponent from 'lib/asyncComponent';
+import asyncComponent from 'config/asyncComponent';
 
 export const HomePage = asyncComponent(() => import('./HomePage'));
 export const AboutPage = asyncComponent(() => import('./AboutPage'));
