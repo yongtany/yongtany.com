@@ -6,12 +6,12 @@ const cx = classNames.bind(styles);
 
 const Skillsets = () => {
   return (
-    <div className={cx('skill-sets')}>
-      <div className={cx('skill-header')}>
-        <h2 className={cx('title')}>Skill sets</h2>
+    <div className={cx('exper-sets')}>
+      <div className={cx('exper-header')}>
+        <h2 className={cx('title')}>Experieces</h2>
       </div>
-      <div className={cx('skill-contents')}>
-        Skillsets
+      <div className={cx('exper-contents')}>
+        Experieces
       </div>
     </div>
   )

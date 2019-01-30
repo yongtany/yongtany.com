@@ -1,6 +1,6 @@
 # Yongtany
 
-> Yongtany is a blog platform for my studies. It provides compfy markdown editor with syntax highlighter enabled. Currently, the service is only available to me.
+> This blog is a place for me to write down what I think. This helps me first with my English who is not my native language, and that also help me empty my brain. By doing this I hope I can help people with some of the thinking, tutorial or whatever stuff I wrote here.
 
 https://yongtany.herokuapp.com/
 
@@ -29,6 +29,6 @@ Following items are core backend technologies used in this project:
 - express
 - mongoDB
 - mongoose,
-- cloudinary(image storage)
-- hearoku(deploy)
+- cloudinary(media storage)
+- heroku(deploy)
 - TypeScript (on SSR)

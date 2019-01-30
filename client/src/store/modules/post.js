@@ -3,7 +3,7 @@ import { createAction, handleActions } from 'redux-actions';
 import { Map, fromJS } from 'immutable';
 import { pender } from 'redux-pender';
 
-import * as api from 'config/api';
+import * as api from 'librarys/api';
 
 // action types
 const GET_POST = 'post/GET_POST';
