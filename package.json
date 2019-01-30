@@ -12,8 +12,8 @@
     "dev": "cross-env NODE_PATH=./src nodemon src/index.js",
     "start": "NODE_PATH=src node src",
     "server": "nodemon index.js",
-    "client": "NODE_PATH=./src npm run start --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "client": "NODE_PATH=./src yarn start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix client && yarn build --prefix client"
   },
   "author": "yongtany",
   "license": "ISC",
