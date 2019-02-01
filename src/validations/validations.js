@@ -31,6 +31,14 @@ module.exports = {
       title: Joi.string().required(), // 뒤에 required를 붙여주면 필수 항목이라는 의미
       body: Joi.string().required(),
       tags: Joi.array().items(Joi.string()).required() // 문자열 배열
+    }),
+
+    projectSchema: Joi.object().keys({
+      name: Joi.string().required(),
+      description: Joi.string().required(),
+      tags: Joi.array().items(Joi.string()).required(),
+      period: Joi.string().required(),
+      skills: Joi.array().items(Joi.string()).required(),
     })
   }
 }
