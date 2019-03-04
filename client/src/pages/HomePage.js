@@ -15,8 +15,8 @@ const HomePage = () => {
       <LandingWrapper>
         <RecentListContainer />
         <SubWrapper>
-          <Skillsets />
           <Projects />
+          <Skillsets />
           <TagList />
         </SubWrapper>
       </LandingWrapper>

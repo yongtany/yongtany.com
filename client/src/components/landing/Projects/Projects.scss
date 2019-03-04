@@ -2,7 +2,7 @@
 
 .projects {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 
   .projects-header {
     .title {
@@ -11,15 +11,47 @@
       color: $oc-gray-6;
     }
   }
+  .project-contents {
+    display: flex;
+    flex-direction:row;
+    flex-wrap : wrap;
 
-  .projects-contents {
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
-    margin: 0 auto;
-    min-height: 15rem;
-    transform: translateY(1rem);
+    @include media("<medium") {
+      flex-direction: column;
+    }
+  }
+
+  .projects-item {
+    width: 45%;
     padding: 1rem;
-    word-break:break-all;
+    margin: 0 auto;
+    transform: translateY(1rem);
+    min-height: 10rem;
+    @include media("<medium") {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+
+
+    .name {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 200;
+      padding: 1rem;
+    }
+
+    .thumbnail {
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
+      img {
+        background-position: center;
+        background-color: #DBE0E6;
+        background-size: cover;
+        max-width: 100%;
+        height: 12rem;
+      }
+    }
   }
 }
+
+
+

@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import PostHeader from 'components/post/PostHeader';
 import PostInfo from 'components/post/PostInfo';
 import PostBody from 'components/post/PostBody';
+import PostComments from 'components/post/PostComments';
 import Loading from 'components/common/Loading';
 
 import * as postActions from 'store/modules/post';
@@ -48,7 +49,6 @@ class Post extends Component {
     const writerId = post.getIn(['user', '_id']);
     const profile_image = post.getIn(['user', 'profile_image']);
 
-
     return (
       <div>
         <PostHeader
@@ -67,6 +67,10 @@ class Post extends Component {
           postImage={postImage}
         />
         <PostBody body={body}/>
+        <PostComments
+          title={title}
+          postId={id}
+        />
       </div>
     )
   }
