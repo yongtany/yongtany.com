@@ -20,6 +20,7 @@ Following items are core frontend technologies used in this project:
 - Marked
 - Prismjs
 - CodeMirror
+- Disqus
 
 ### Server
 

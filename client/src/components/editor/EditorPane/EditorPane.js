@@ -11,6 +11,7 @@ import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/jsx/jsx';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/shell/shell';
+import 'codemirror/mode/clike/clike';
 
 // CodeMirror를 위한 CSS 스타일
 import 'codemirror/lib/codemirror.css';
