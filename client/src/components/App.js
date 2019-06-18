@@ -22,6 +22,7 @@ const PublicRoutes = (props) => (
     <Route exact path="/post" component={ListPage}/>
     <Route path="/page/:page" component={ListPage}/>
     <Route path="/tag/:tag/:page?" component={ListPage}/>
+    <Route path="/category/:category/:page?" component={ListPage}/>
     <Route path="/post/:id" component={PostPage}/>
     <Route path="/auth" component={AuthPage}/>
     <Route path="/about" component={AboutPage}/>
@@ -35,6 +36,7 @@ const PrivateRoutes = (props) => (
     <Route exact path="/post" component={ListPage}/>
     <Route path="/page/:page" component={ListPage}/>
     <Route path="/tag/:tag/:page?" component={ListPage}/>
+    <Route path="/category/:category/:page?" component={ListPage}/>
     <Route path="/post/:id" component={PostPage}/>
     <Route path="/editor" component={EditorPage}/>
     <Route path="/about" component={AboutPage}/>

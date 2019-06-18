@@ -26,6 +26,10 @@ const postSchema = new Schema({
     type: Number,
     default: 0,
   },
+  category: {
+    type: String,
+    required: true
+  }
 });
 
 postSchema.methods = {
@@ -39,6 +43,7 @@ postSchema.methods = {
       publishedDate: this.publishedDate,
       user: this.user,
       favoriteCount: this.favoriteCount,
+      category: this.category
     };
   },
 };

@@ -8,10 +8,11 @@ import * as listActions from 'store/modules/list';
 class ListContainer extends Component {
   getPostList = () => {
     // 페이지와 태그 값을 부모로부터 받아 옵니다.
-    const { tag, page, ListActions } = this.props;
+    const { category, tag, page, ListActions } = this.props;
     ListActions.getPostList({
       page,
-      tag
+      tag,
+      category
     });
   }
 
@@ -31,7 +32,7 @@ class ListContainer extends Component {
 
 
   render() {
-    const { loading, posts, page, lastPage, tag, isLoggedIn } = this.props;
+    const { loading, posts, page, lastPage, tag, category, isLoggedIn } = this.props;
 
     if(loading) return <Loading />; // 로딩 중에는 아무것도 보여주지 않습니다.
     return (
@@ -40,6 +41,7 @@ class ListContainer extends Component {
           page={page}
           lastPage={lastPage}
           tag={tag}
+          category={category}
           isLoggedIn={isLoggedIn}
         />
     );

@@ -6,13 +6,14 @@ import RecentListContainer from 'containers/list/RecentListContainer';
 
 const ListPage = ({ match }) => {
   // page의 기본 값을 1로
-  const { page =1, tag } = match.params;
+  const { page =1, tag, category } = match.params;
   return (
     <PageTemplate>
       <ListWrapper>
         <ListContainer
           page={parseInt(page, 10)}
           tag={tag}
+          category={category}
         />
         <RecentListContainer />
       </ListWrapper>
