@@ -33,7 +33,7 @@ module.exports = {
   upload : multer({
     storage: storage,
     limits : {
-      fileSize: 1024 * 1024* 5
+      fileSize: 1024 * 1024 * 5
     },
     fileFilter: fileFilter
   }),
