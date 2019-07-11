@@ -151,7 +151,7 @@ module.exports = {
     try {
       const recents = await Post.find()
         .sort({ _id: -1 })
-        .limit(3)
+        .limit(4)
         .populate('user')
         .lean()
         .exec();

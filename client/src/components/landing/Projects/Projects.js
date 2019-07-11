@@ -13,6 +13,7 @@ const Projects = () => {
       <div className={cx('project-contents')}>
         <ProjectItem1 />
         <ProjectItem2 />
+        <ProjectItem3 />
       </div>
     </div>
   )
@@ -32,10 +33,21 @@ const ProjectItem1 = () => (
 const ProjectItem2 = () => (
   <div className={cx('projects-item')}>
     <div className={cx('thumbnail')}>
-      <img src={require('images/loaf.png')}  alt='yongtany'/>
+      <img src={require('images/loaf.png')}  alt='loaf'/>
     </div>
     <div className={cx('name')}>
       loaf.io
+    </div>
+  </div>
+);
+
+const ProjectItem3 = () => (
+  <div className={cx('projects-item')}>
+    <div className={cx('thumbnail')}>
+      <img src={require('images/etherowd.png')}  alt='etherowd'/>
+    </div>
+    <div className={cx('name')}>
+      etherwod.com
     </div>
   </div>
 )

@@ -1,0 +1,66 @@
+@import 'styles/utils.scss';
+
+.contact-me {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  .contact-title {
+    .title {
+      font-size: 1.2rem;
+      font-weight: 200;
+      text-transform: uppercase;
+      color: $oc-gray-6;
+    }
+  }
+
+  .contact-header {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
+    padding: 0.8rem;
+    color: $oc-gray-6;
+    .header-container {
+      display: flex;
+      img {
+        width: 20%;
+        margin-left: 1rem;
+        transform: translateY(-2rem);
+      }
+    }
+  }
+
+  .contact-content {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
+    padding: 0.8rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction:column;
+
+    .contact-input {
+      background-color: $oc-gray-1;
+      border: none;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+    .contact-message {
+      background-color: $oc-gray-1;
+      border: none;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+      padding: 1rem;
+      font-size: 0.8rem;
+      height: 10rem;
+    }
+    .button {
+      color: white;
+      background-color: $oc-gray-4;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.8rem;
+    }
+  }
+}
