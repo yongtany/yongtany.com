@@ -9,5 +9,5 @@ module.exports = {
   cloudClientID: process.env.CLOUDINARY_API_KEY,
   cloudSecret: process.env.CLOUDINARY_SECERT,
   sendgridUsername: process.env.SENDGRID_USERNAME,
-  sendgridPassword: procces.env.SENDGRID_PASSWORD
+  sendgridPassword: process.env.SENDGRID_PASSWORD
 };
