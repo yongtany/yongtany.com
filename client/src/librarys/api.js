@@ -15,3 +15,4 @@ export const signUp = ({email, name, username, password}) => axios.post('/users/
 export const signIn = ({email, password}) => axios.post('/users/signin', { email, password });
 export const facebookLogin = ({access_token}) => axios.post('/users/oauth/facebook', { access_token });
 export const googleLogin = ({access_token}) => axios.post('/users/oauth/google', { access_token });
+export const sendMail = ({name, fromEmail, subject, message}) => axios.post('/users/contact', { name, fromEmail, subject, message });

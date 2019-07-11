@@ -3,7 +3,7 @@ import PageTemplate from 'components/common/PageTemplate';
 import Landing from 'components/landing/Landing';
 import RecentListContainer from 'containers/list/RecentListContainer';
 import LandingWrapper from 'components/landing/LandingWrapper';
-import Contact from 'components/landing/Contact';
+import ContactContainer from 'containers/contact/ContactContainer';
 import SubWrapper from 'components/landing/SubWrapper';
 import Projects from 'components/landing/Projects';
 
@@ -15,7 +15,7 @@ const HomePage = () => {
         <RecentListContainer />
         <SubWrapper>
           <Projects />
-          <Contact />
+          <ContactContainer />
         </SubWrapper>
       </LandingWrapper>
     </PageTemplate>

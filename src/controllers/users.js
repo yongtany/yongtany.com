@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('models/user');
 const { JWT_SECRET } = require('config/keys');
+const contactMe = require('services/mail');
 
 signToken = user => {
   return jwt.sign({
@@ -61,4 +62,9 @@ module.exports = {
         console.log('UsersController.secret() called!');
         res.json({ secret: "resource" });
     },
+    contact: async(req, res, next) => {
+      const { name, fromEmail, subject, message } = req.body;
+      await contactMe.sendContactMail(name, fromEmail, subject, message);
+      res.status(200).json();
+    }
 }

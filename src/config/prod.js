@@ -8,4 +8,6 @@ module.exports = {
   googleClientSecret : process.env.GOOGLE_SECRET,
   cloudClientID: process.env.CLOUDINARY_API_KEY,
   cloudSecret: process.env.CLOUDINARY_SECERT,
+  sendgridUsername: process.env.SENDGRID_USERNAME,
+  sendgridPassword: proccess.env.SENDGRID_PASSWORD
 };

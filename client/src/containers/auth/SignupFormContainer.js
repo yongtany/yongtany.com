@@ -41,7 +41,7 @@ class SignupFormContainer extends Component {
     const { email, name, username, password } = this.state;
     const { AuthActions, history } = this.props;
 
-    const post = {
+    const user = {
       email: email,
       name: name,
       username: username,
@@ -49,7 +49,7 @@ class SignupFormContainer extends Component {
     };
 
     event.preventDefault();
-    await AuthActions.signUp(post);
+    await AuthActions.signUp(user);
     history.push('/');
   };
 

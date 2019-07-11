@@ -55,12 +55,15 @@
       font-size: 0.8rem;
       height: 10rem;
     }
-    .button {
+    .cbutton {
       color: white;
       background-color: $oc-gray-4;
       font-size: 1rem;
       font-weight: 600;
       padding: 0.8rem;
+    }
+    .contacted {
+      text-align: center;
     }
   }
 }
