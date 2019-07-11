@@ -22,33 +22,52 @@
   }
 
   .projects-item {
-    width: 45%;
+    width: 47%;
     padding: 1rem;
     margin: 0 auto;
+    min-height: 10rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
     transform: translateY(1rem);
     min-height: 10rem;
+    .item-header {
+      .title {
+        margin: 0 auto;
+        color: rgb(61, 72, 82);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .project-at {
+        color: rgb(38, 121, 189);
+        border-bottom: 3px solid rgb(254, 245, 196);
+        display: inline-block;
+        &:hover {
+          background-color: rgb(254, 245, 196);
+        }
+      }
+      .tag-list{
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        align-items: center;
+        list-style: none;
+        padding: 0px;
+        .ptag {
+          background-color: rgb(243, 247, 249);
+          font-weight: 300;
+          padding: 0.4rem;
+          margin: 0.5rem;
+        }
+      }
+    }
+    .content {
+      color: $oc-gray-6;
+    }
     @include media("<medium") {
       width: 100%;
       margin-bottom: 1.5rem;
-    }
-
-
-    .name {
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 200;
-      padding: 1rem;
-    }
-
-    .thumbnail {
-      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.07);
-      img {
-        background-position: center;
-        background-color: #DBE0E6;
-        background-size: cover;
-        max-width: 100%;
-        height: 12rem;
-      }
     }
   }
 }
