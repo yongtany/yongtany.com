@@ -1,23 +1,51 @@
 @import 'styles/utils.scss';
 
 .footer {
-    background: white;
-    height: 5rem;
-    border-top: 1.5px solid $oc-gray-4;
-
-    // 내부 내용 가운데 정렬
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  .f-container {
+    max-width: 1000px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    flex-direction: column; // 위에서 아래로
-
-    .brand {
-        // 로고
-        color: black;
-        font-size: 2rem;
-        font-weight: 300;
+    width: 100%;
+    height: 77px;
+    padding: 25px 40px;
+    .f-logo {
+      display: flex;
+      -webkit-box-align: baseline;
+      align-items: baseline;
+      .copyright {
+        font-size: 0.75rem;
+        margin-right: 1rem;
+        color: rgb(96, 111, 123);
+        letter-spacing: 0.01em;
+      }
+      .brand {
+        letter-spacing: 0.05em;
+        line-height: 1.5;
+        font-weight: 700;
+        color: rgb(61, 72, 82);
+        font-family: "Cormorant Garamond";
+        text-decoration: none;
+      }
     }
-    .copyright {
-      margin-top: 1rem;
+    .navbar-link {
+      -webkit-box-align: center;
+      align-items: center;
+      list-style: none;
+      display: flex;
+      padding: 0px;
+      .nav-item {
+        margin-left: 1rem;
+        .link {
+          color: rgb(96, 111, 123);
+          letter-spacing: 0.01em;
+          text-decoration: none;
+        }
+      }
     }
+  }
 }

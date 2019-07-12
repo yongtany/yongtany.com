@@ -6,12 +6,27 @@ import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 const Footer = () => (
-    <div className={cx('footer')}>
-        <Link to="/" className={cx('brand')}>yongtany</Link>
-        <div className={cx('copyright')}>
-        Copyright &copy; {new Date().getFullYear()} yongtany
+    <footer className={cx('footer')}>
+      <div className={cx('f-container')}>
+        <div className={cx('f-logo')}>
+          <p className={cx('copyright')}>
+            All content &copy; {new Date().getFullYear()}
+          </p>
+          <Link to="/" className={cx('brand')}>&lt;Yongtany /&gt;</Link>
         </div>
-    </div>
+        <ul className={cx('navbar-link')}>
+          <li className={cx('nav-item')}>
+            <Link to="/about" className={cx('link')}>About</Link>
+          </li>
+          <li className={cx('nav-item')}>
+            <Link to="/post" className={cx('link')}>Blog</Link>
+          </li>
+          <li className={cx('nav-item')}>
+            <Link to="/auth" className={cx('link')}>Sign In</Link>
+          </li>
+        </ul>
+      </div>
+    </footer>
 );
 
 export default Footer;

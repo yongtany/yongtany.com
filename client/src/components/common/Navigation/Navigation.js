@@ -10,12 +10,13 @@ const Navigation = (props) => (
         <div className={cx('navigation')}>
           <div className={cx('inner')}>
               <div className={cx('column')}>
-                  <Link to="/">
+                  <Link to="/" className={cx('logo')}>
                       <img
                         src={require("images/logo.png")}
-                        className={cx('logo')}
+                        className={cx('logo-i')}
                         alt="Logo"
                       />
+                      <p className="logo-t">&lt;Yongtany /&gt;</p>
                   </Link>
               </div>
               <div className={cx('column')}>
@@ -29,7 +30,13 @@ const Navigation = (props) => (
                       />
                   </form>
               </div>
+
               <div className={cx('column')}>
+                   <div class="menu-btn">
+                      <div class="btn-line"></div>
+                      <div class="btn-line"></div>
+                      <div class="btn-line"></div>
+                    </div>
                   <div className={cx('right')}>
                     <Link to="/about">
                       About
@@ -65,6 +72,7 @@ const Navigation = (props) => (
                     </Link>
                   </div>
                   }
+
               </div>
           </div>
       </div>
