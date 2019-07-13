@@ -16,11 +16,13 @@
     height: 77px;
     padding: 25px 40px;
 
+
     .column {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 33%;
+
 
       &:first-child {
         justify-content: flex-start;
@@ -33,6 +35,9 @@
 
         .logo-i {
           max-width: 4rem;
+          @include media("<medium") {
+            display: none;
+          }
         }
         .logo-t {
           letter-spacing: 0.05em;
@@ -67,38 +72,12 @@
       .right {
         // 오른쪽 내용
         margin-left: auto;
+        @include media("<medium") {
+          font-size: 12px;;
+        }
         &:hover {
           color: $oc-gray-5;
         }
-        @include media("<medium") {
-          display: none;
-        }
-        .menu-btn {
-          position: absolute;
-          z-index: 3;
-          right: 35px;
-          top: 35px;
-          cursor: pointer;
-          transition: all 1.0s ease-out; }
-          .btn-line {
-            width: 1.5rem;
-            height: 3px;
-            margin: 0 0 5px 0;
-            background: black;
-            transition: all 1.0s ease-out; }
-          .menu-btn.close {
-            transform: rotate(180deg); }
-            .menu-btn.close .btn-line:nth-child(1) {
-              transform: rotate(45deg) translate(5px, 5px); }
-            .menu-btn.close .btn-line:nth-child(2) {
-              opacity: 0; }
-            .menu-btn.close .btn-line:nth-child(3) {
-              transform: rotate(-45deg) translate(7px, -6px); }
-        @include media("<medium") {
-          display: inline;
-
-          }
-
         img {
           width: 2.8rem;
           border-radius: 100%;

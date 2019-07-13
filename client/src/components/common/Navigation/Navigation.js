@@ -32,11 +32,6 @@ const Navigation = (props) => (
               </div>
 
               <div className={cx('column')}>
-                   <div class="menu-btn">
-                      <div class="btn-line"></div>
-                      <div class="btn-line"></div>
-                      <div class="btn-line"></div>
-                    </div>
                   <div className={cx('right')}>
                     <Link to="/about">
                       About
