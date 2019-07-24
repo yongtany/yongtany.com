@@ -18,7 +18,7 @@ const Projects = () => {
           tag1="react"
           tag2="nodejs"
           tag3="mongodb"
-          discription="This blog is a place for me to write down what I think. This helps me first with my English who is not my native language, and that also help me empty my brain. By doing this I hope I can help people with some of the thinking, tutorial or whatever stuff I wrote here."
+          discription="This blog is a place for me to write down what I think. By this, I can improve English which is not my native language and also help me empty my brain. By doing this I hope I can help people with some of the thinking, tutorial or whatever stuff I wrote here."
         />
         <ProjectItem
           url="https://github.com/yongtany/loaf"

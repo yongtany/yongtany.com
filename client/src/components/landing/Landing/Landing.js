@@ -11,11 +11,10 @@ const Landing = () => (
     <img src={Myface} alt={'myface'} />
     <h1 className={cx('heading')}>
         Yongtany
-        <span className={cx('text-secondary')}> 's blog</span>
+        <span className={cx('text-secondary')}> 's TIL</span>
     </h1>
     <h2 className={cx('bio')}>
-        Developer, Designer &
-        Univ. student
+      Univ. student & Wanna be a front-end Developer
     </h2>
     <div className={cx('conn-icons')}>
         <a href="http://dev-yong.tistory.com/" className={cx('icon')}>
