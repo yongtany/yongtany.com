@@ -21,7 +21,7 @@ yongtany.com
 
 ## Introduction
 
-> This blog is a place for me to write down what I think. This helps me first with my English who is not my native language, and that also help me empty my brain. By doing this I hope I can help people with some of the thinking, tutorial or whatever stuff I wrote here.
+> This blog is a place for me to write down what I think. This helps me first with my English which is not my native language, and that also help me empty my brain. By doing this I hope I can help people with some of the thinking, tutorial or whatever stuff I wrote here.
 
 https://yongtany.herokuapp.com/
 
