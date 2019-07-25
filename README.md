@@ -62,13 +62,9 @@ Following items are core backend technologies used in this project:
 4. Run `npm` or `yarn install` to install dependencies.
 5. Set `.env` file with your mongoURI, JWT_SECRET, GoogleClient, FacebookClient, Cloudinary and Sendgrid.
 6. Run `mongod` to open mognodb server.
-7. Run `yarn dev` to see the example app at `http://localhost:6000/`.
+7. Run `yarn dev` to see the example app at `http://localhost:5000/`.
 8. Move to the apropriate directory: `cd client`.
 9. Run `yarn start` to see the example app at `http://localhost:3000/`.
-
-## Commands
-
-- `yarn start` - start at `http://localhost:4000/`
 
 ## License
 
