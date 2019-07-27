@@ -19,6 +19,9 @@ router.route('/')
 router.route('/recent')
   .get(PostsControllers.getRecentList);
 
+router.route('/search')
+  .get(PostsControllers.searchPost);
+
 router.route('/:id')
   .get(PostsControllers.getPostById);
 
@@ -29,5 +32,7 @@ router.route('/:id')
 router.route('/:id')
   .delete(passportJWT,
   PostsControllers.deletePost);
+
+
 
 module.exports = router;

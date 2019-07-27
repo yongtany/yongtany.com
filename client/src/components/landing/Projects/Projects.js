@@ -36,7 +36,7 @@ const Projects = () => {
           tag1="solidity"
           tag2="nodejs"
           tag3="react"
-          discription="Crowdfunding platform through etherium-based trust transactions."
+          discription="Crowdfunding platform through ethereum-based trust transactions."
         />
         <ProjectItem
           url="https://github.com/yongtany/Data-Structures-and-Algorithms"

@@ -47,6 +47,10 @@ postSchema.methods = {
     };
   },
 };
+postSchema.index({
+  title: "text",
+  body : "text"
+});
 
 postSchema.statics = {
   createPost(args, user, postImage) {

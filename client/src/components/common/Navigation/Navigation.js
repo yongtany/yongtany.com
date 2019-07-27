@@ -20,15 +20,16 @@ const Navigation = (props) => (
                   </Link>
               </div>
               <div className={cx('column')}>
-                  <form onSubmit={props.onSubmit}>
                       <input
                           type="text"
                           placeholder="Search"
                           className={cx('searchInput')}
-                          value={props.value}
-                          onChange={props.onInputChange}
+                          value={props.search}
+                          name="search"
+                          onChange={props.handleInputChange}
+                          onKeyPress={props.handleKeyPress}
                       />
-                  </form>
+
               </div>
 
               <div className={cx('column')}>

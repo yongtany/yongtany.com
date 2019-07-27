@@ -53,16 +53,47 @@ module.exports = {
     }
   },
 
+  searchPost : async (req, res) => {
+    const { search } = req.query;
+    const page = parseInt(req.query.page || 1, 10);
+
+    // 잘못된 페이지가 주어졌다면 에러
+    if (page < 1) {
+      return res.status(HTTPStatus.BAD_REQUEST).json()
+    }
+    // 검색 쿼리
+    const query = search ? {
+      $text: { $search: search}
+    } : {};
+      const posts = await Post.find(query)
+        .sort({ _id: -1 })
+        .limit(10)
+        .skip((page - 1) * 10)
+        .populate('user')
+        .lean()
+        .exec();
+
+      const postCount = await Post.count(query).exec();
+      const limitBodyLength = post => ({
+        ...post,
+        body: post.body.length < 200 ? post.body : `${post.body.slice(0, 200)}...`
+      });
+      // 마지막 페이지 알려 주기
+      // res.set은 response header를 설정해줍니다.
+      res.set('Last-Page', Math.ceil(postCount / 10));
+      return res.status(HTTPStatus.OK).json(posts.map(limitBodyLength));
+  },
+
   getPostList : async (req, res) => {
     // page가 주어지지 않았다면 1로 간주
     // query는 문자열 형태로 받아 오므로 숫자로 변환
     const page = parseInt(req.query.page || 1, 10);
-    const { tag, category } = req.query;
+    const { tag } = req.query;
 
-    const query = tag || category ? {
+    const query = tag ? {
       tags: tag, // tags 배열에 tag를 가진 포스트 찾기.
-      category
     } : {};
+
 
     // 잘못된 페이지가 주어졌다면 에러
     if (page < 1) {
