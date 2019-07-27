@@ -42,18 +42,18 @@ class ListContainer extends Component {
     window.scrollTo(0,0);
   }
 
-
   render() {
-    const { loading, posts, page, lastPage, tag, category, isLoggedIn } = this.props;
+    const { loading, posts, page, lastPage, tag, search, isLoggedIn } = this.props;
 
     if(loading) return <Loading />; // 로딩 중에는 아무것도 보여주지 않습니다.
+
     return (
         <PostList
           posts={posts}
           page={page}
           lastPage={lastPage}
           tag={tag}
-          category={category}
+          search={search}
           isLoggedIn={isLoggedIn}
         />
     );

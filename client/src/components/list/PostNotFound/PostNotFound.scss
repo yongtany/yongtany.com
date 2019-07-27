@@ -1,0 +1,30 @@
+@import 'styles/utils.scss';
+
+.not-found {
+  width:40rem;
+  display: block;
+  margin: 60px auto;
+  display: flex;
+
+  .content {
+    justify-content: center;
+    align-items: center;
+
+    p {
+      font-size: 1.3rem;
+      font-weight: 100;
+      align-content: center;
+      color: $oc-gray-7;
+      white-space: nowrap;
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  @include media("<medium") {
+    width: 100%;
+    flex-direction: column;
+  }
+}

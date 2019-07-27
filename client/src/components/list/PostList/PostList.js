@@ -3,13 +3,14 @@ import styles from './PostList.scss';
 import classNames from 'classnames/bind';
 
 import PostItem from 'components/list/PostItem';
+import PostNotFound from 'components/list/PostNotFound'
 import Pagination from 'components/list/Pagination';
 import Button from 'components/common/Button';
 
 const cx = classNames.bind(styles);
 
 
-const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
+const PostList = ({posts, page, lastPage, tag, search, isLoggedIn}) => {
   const postList = posts.map(
     (post) => {
       const { _id, title, body, publishedDate, postImage, tags } = post.toJS();
@@ -33,7 +34,6 @@ const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
     }
   );
 
-
   return (
     <div className={cx('post-list')}>
       <div className={cx('header')}>
@@ -43,12 +43,16 @@ const PostList = ({posts, page, lastPage, tag, isLoggedIn}) => {
           <Button to={'/editor'}>
             Write post
           </Button>
-
         : null
         }
         </div>
       </div>
-        {postList}
+        {posts.toJS().length === 0 ?
+        <PostNotFound
+          search={search}
+        /> :
+          postList
+        }
         <Pagination page={page} lastPage={lastPage} tag={tag}/>
     </div>
   )
