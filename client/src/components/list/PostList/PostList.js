@@ -7,10 +7,11 @@ import PostNotFound from 'components/list/PostNotFound'
 import Pagination from 'components/list/Pagination';
 import Button from 'components/common/Button';
 
+
 const cx = classNames.bind(styles);
 
 
-const PostList = ({posts, page, lastPage, tag, search, isLoggedIn}) => {
+const PostList = ({posts, page, lastPage, tag, search, isLoggedIn, loading}) => {
   const postList = posts.map(
     (post) => {
       const { _id, title, body, publishedDate, postImage, tags } = post.toJS();

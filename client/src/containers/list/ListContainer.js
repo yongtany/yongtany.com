@@ -55,6 +55,7 @@ class ListContainer extends Component {
           tag={tag}
           search={search}
           isLoggedIn={isLoggedIn}
+          loading={loading}
         />
     );
   }
