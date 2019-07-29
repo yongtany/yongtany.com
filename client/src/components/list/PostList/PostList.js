@@ -6,10 +6,9 @@ import PostItem from 'components/list/PostItem';
 import PostNotFound from 'components/list/PostNotFound'
 import Pagination from 'components/list/Pagination';
 import Button from 'components/common/Button';
-
+import Loading from 'components/common/Loading';
 
 const cx = classNames.bind(styles);
-
 
 const PostList = ({posts, page, lastPage, tag, search, isLoggedIn, loading}) => {
   const postList = posts.map(
@@ -49,6 +48,7 @@ const PostList = ({posts, page, lastPage, tag, search, isLoggedIn, loading}) => 
         </div>
       </div>
         {posts.toJS().length === 0 ?
+        loading ? <Loading /> :
         <PostNotFound
           search={search}
         /> :
