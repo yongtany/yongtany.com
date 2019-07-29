@@ -14,7 +14,7 @@ const Landing = () => (
         <span className={cx('text-secondary')}> 's TIL</span>
     </h1>
     <h2 className={cx('bio')}>
-      Wanna be a Front-end Developer
+      Wanna be a Developer
     </h2>
     <div className={cx('conn-icons')}>
         <a href="http://dev-yong.tistory.com/" className={cx('icon')}>
@@ -31,7 +31,6 @@ const Landing = () => (
         </a>
     </div>
   </div>
-
 );
 
 export default Landing;

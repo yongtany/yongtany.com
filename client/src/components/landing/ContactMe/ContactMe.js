@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './ContactMe.scss';
 import classNames from 'classnames/bind';
 
+import Loading from 'components/common/Loading';
+
 const cx = classNames.bind(styles);
 
 const ContactMe = props => {
@@ -18,7 +20,7 @@ const ContactMe = props => {
           <img src={require('images/contact.png')}  alt='mail'/>
         </div>
       </div>
-      {!props.contacted ?  (
+      {!props.contacted ? (
       <form
         className={cx('contact-content')}
         onSubmit={props.handleSubmit }
@@ -59,7 +61,7 @@ const ContactMe = props => {
           value="Submit"
         />
     </form>
-    ) : (
+    ) : props.loading ?  <Loading /> : (
       <div className={cx('contact-content')}>
         <div className={cx('contacted')}>
           <h4>Thank you, I will reply to you as fast as possible.</h4>

@@ -39,7 +39,7 @@ const SignupForm = (props) => (
           method="post"
         >
             <input
-                type="email"
+                type="text"
                 placeholder="Email"
                 className={cx('textInput')}
                 value={props.emailValue}

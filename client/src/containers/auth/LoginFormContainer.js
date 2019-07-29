@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { toast } from "react-toastify";
+import { validateEmail } from 'librarys/validations'
 
 
 import LoginForm from "components/auth/LoginForm";
@@ -42,9 +44,24 @@ class LoginFormContainer extends Component {
       password: password
     }
 
-    event.preventDefault();
-    await AuthActions.signIn(post);
-    history.push('/');
+    try {
+      event.preventDefault();
+      if (
+        email !== "" &&
+        password !== ""
+      ) {
+        if(!validateEmail(email)) {
+          toast.error('Not a valid Email');
+        } else {
+          await AuthActions.signIn(post);
+          history.push('/');
+        }
+      } else {
+        toast.error('Fill in the input fields.');
+      }
+    } catch(e) {
+      console.log(e);
+    }
   };
   _handleGoogleLogin = async res => {
     const { AuthActions, history } = this.props;
