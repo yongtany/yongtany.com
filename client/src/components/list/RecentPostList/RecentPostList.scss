@@ -2,7 +2,6 @@
 
 
 .recent-list {
-  width: 25%;
   margin-bottom: 2rem;
   margin-top: 1.05rem;
 
@@ -37,7 +36,6 @@
 
         @include media("<large") {
           width: 100%;
-          height: 10rem;
         }
       }
 
@@ -70,12 +68,10 @@
   }
 
   @include media("<large") {
-    width: 50%;
-    margin-left: 0;
+
   }
 
   @include media("<medium") {
-    width: 10rem;
-    margin-left: 0;
+
   }
 }

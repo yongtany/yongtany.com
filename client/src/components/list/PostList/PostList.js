@@ -59,5 +59,4 @@ const PostList = ({posts, page, lastPage, tag, search, isLoggedIn, loading}) => 
   )
 };
 
-
 export default PostList;

@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTemplate from 'components/common/PageTemplate';
 import ListWrapper from 'components/list/ListWrapper';
+import RecentWrapper from 'components/landing/RecentWrapper';
 import ListContainer from 'containers/list/ListContainer';
 import RecentListContainer from 'containers/list/RecentListContainer';
 
@@ -15,7 +16,9 @@ const ListPage = ({ match }) => {
           tag={tag}
           search={search}
         />
-        <RecentListContainer />
+        <RecentWrapper>
+          <RecentListContainer />
+        </RecentWrapper>
       </ListWrapper>
     </PageTemplate>
   );

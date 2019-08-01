@@ -5,6 +5,7 @@ import RecentListContainer from 'containers/list/RecentListContainer';
 import LandingWrapper from 'components/landing/LandingWrapper';
 import ContactContainer from 'containers/contact/ContactContainer';
 import SubWrapper from 'components/landing/SubWrapper';
+import RecentWrapper from 'components/landing/RecentWrapper';
 import Projects from 'components/landing/Projects';
 
 const HomePage = () => {
@@ -12,7 +13,9 @@ const HomePage = () => {
     <PageTemplate>
       <Landing />
       <LandingWrapper>
-        <RecentListContainer />
+        <RecentWrapper>
+          <RecentListContainer />
+        </RecentWrapper>
         <SubWrapper>
           <Projects />
           <ContactContainer />

@@ -4,6 +4,7 @@ import PostPageWrapper from 'components/post/PostPageWrapper';
 import PostWrapper from 'components/post/PostWrapper';
 import Post from 'containers/post/Post';
 import RecentListContainer from 'containers/list/RecentListContainer';
+import RecentWrapper from 'components/landing/RecentWrapper';
 import AskRemoveModalContainer from 'containers/modal/AskRemoveModalContainer';
 
 
@@ -18,7 +19,9 @@ const PostPage = ({match}) => {
             <Post id={id} />
           </PostWrapper>
           <AskRemoveModalContainer />
-          <RecentListContainer />
+          <RecentWrapper>
+            <RecentListContainer />
+          </RecentWrapper>
         </PostPageWrapper>
       </PageTemplate>
     </div>

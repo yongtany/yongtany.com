@@ -3,18 +3,14 @@
 .sub-wrapper {
   width: 75%;
   margin: 0 auto;
-  padding-left: 1rem;
-
-
+  margin-left: 1rem;
 
   @include media("<large") {
     width: 100%;
+    margin-left: 0;
+    padding: 0 1rem 0 1rem;
   }
   @include media("<medium") {
-    text-align: center;
-    width: 30rem;
-    padding-right: 7rem;
-    transform: translateX(-2rem);
-    margin-bottom: 3rem;
+    padding: 0 3rem 0 3rem;
   }
 }
