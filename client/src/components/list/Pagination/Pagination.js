@@ -5,9 +5,14 @@ import Button from 'components/common/Button';
 
 const cx = classNames.bind(styles);
 
-const Pagination = ({page, lastPage, tag, canSearch }) => {
+const Pagination = ({ page, lastPage, tag, search, canSearch }) => {
   const createPagePath = (page) => {
-    return tag ? `/tag/${tag}/${page}` : `/page/${page}`;
+    if(tag) {
+      return `/tag/${tag}/${page}`;
+    } else if(search) {
+      return `/search/${search}/${page}`;
+    }
+    return `/page/${page}`;
   }
 
   return (

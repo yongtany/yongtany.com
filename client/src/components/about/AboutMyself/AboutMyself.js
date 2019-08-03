@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 const AboutMyself = () => (
   <div className={cx('about-myself')}>
     <div className={cx('about-header')}>
-      <span>About myslef</span>
+      <span>About myself</span>
     </div>
     <div className={cx('paper')}>
       <h4>Intro</h4>
@@ -22,6 +22,7 @@ const AboutMyself = () => (
         <li>Express</li>
         <li>MongoDB</li>
         <li>Mysql</li>
+        <li>C++</li>
       </ul>
       <p>
       I studied Computer Science at Kyungpook National University. When I was in school, I was interested in web development so I studied intensively.

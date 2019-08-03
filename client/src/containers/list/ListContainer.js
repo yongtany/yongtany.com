@@ -44,6 +44,8 @@ class ListContainer extends Component {
 
   render() {
     const { loading, loading2, posts, page, lastPage, tag, search, isLoggedIn } = this.props;
+    const canSearch = posts.toJS().length ? true : false;
+    console.log(canSearch);
 
     if(loading || loading2) return <Loading />; // 로딩 중에는 아무것도 보여주지 않습니다.
 
@@ -54,6 +56,7 @@ class ListContainer extends Component {
           lastPage={lastPage}
           tag={tag}
           search={search}
+          canSearch={canSearch}
           isLoggedIn={isLoggedIn}
         />
     );

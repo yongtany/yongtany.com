@@ -5,6 +5,7 @@
   margin: 0 auto;
   text-align: center;
 
+
   @include media("<large") {
     text-align: center;
     justify-content: center;

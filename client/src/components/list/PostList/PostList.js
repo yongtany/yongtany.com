@@ -9,13 +9,14 @@ import Button from 'components/common/Button';
 
 const cx = classNames.bind(styles);
 
-const PostList = ({posts, page, lastPage, tag, search, isLoggedIn}) => {
+const PostList = ({posts, page, lastPage, tag, search, canSearch, isLoggedIn}) => {
   const postList = posts.map(
     (post) => {
       const { _id, title, body, publishedDate, postImage, tags } = post.toJS();
 
       const name = post.getIn(['user', 'name']);
       const profile_image = post.getIn(['user', 'profile_image']);
+
 
       return (
         <PostItem
@@ -52,7 +53,13 @@ const PostList = ({posts, page, lastPage, tag, search, isLoggedIn}) => {
         /> :
           postList
         }
-        <Pagination page={page} lastPage={lastPage} tag={tag} />
+        <Pagination
+          page={page}
+          lastPage={lastPage}
+          tag={tag}
+          search={search}
+          canSearch={canSearch}
+        />
     </div>
   )
 };
