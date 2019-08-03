@@ -28,7 +28,7 @@ class RecentListContainer extends Component {
 export default connect(
   (state) => ({
     recentPosts: state.list.get('recentPosts'),
-    loading: state.pender.pending['list/GET_POST_LIST'],
+    loading: state.pender.pending['list/GET_RECENT_LIST'],
   }),
   (dispatch) => ({
     ListActions: bindActionCreators(listActions, dispatch)
