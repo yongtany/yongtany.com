@@ -19,7 +19,7 @@ export const searchPost = createAction(GET_SEARCH_POST, api.searchPost);
 const initialState = Map({
   posts: List(),
   recentPosts: List(),
-  lastPage: null
+  lastPage: null,
 });
 
 // reducer
@@ -28,7 +28,6 @@ export default handleActions({
     type: GET_POST_LIST,
     onSuccess: (state, action) => {
       const { data: posts } = action.payload;
-
       const lastPage = action.payload.headers['last-page'];
       return state.set('posts', fromJS(posts))
                   .set('lastPage', parseInt(lastPage, 10))

@@ -21,10 +21,15 @@ class NavigationContainer extends Component {
     });
   };
   _handleKeyPress = async event  => {
+    const { search } = this.state;
+    const { history } = this.props;
+
     if(event.key === 'Enter') {
-      const { search } = this.state;
-      const { history } = this.props;
-      history.push(`/search/${search}`);
+      if(search === '') {
+        event.preventDefault();
+      } else {
+        history.push(`/search/${search}`);
+      }
     }
   };
 
