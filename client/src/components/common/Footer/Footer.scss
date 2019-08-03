@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  border-top: 1.5px solid $oc-gray-4;
   .f-container {
     max-width: 1000px;
     display: flex;
@@ -47,5 +48,8 @@
         }
       }
     }
+  }
+  @include media("<small") {
+    font-size: 10px;
   }
 }

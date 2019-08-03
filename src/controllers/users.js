@@ -28,7 +28,7 @@ module.exports = {
           password: password,
           userName: userName,
           name: name,
-          profile_image: profile_image,
+          profile_image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlyd40MHRZp3DTs2eboJCA1F4ReLWby-iS090CKl-rj-zAlOq7',
           provider: 'LOCAL'
       });
 

@@ -45,22 +45,14 @@ const Navigation = (props) => (
                   </div>
                   {props.isLoggedIn ?
                   <div className={cx('right')}>
-                    <Link to='/profile'>
-                    {props.profile_image ?
-                      <img
+                  <Link to='/profile'>
+                    <img
                       src={props.profile_image}
                       alt={props.name}
                       className={cx('profile_image')}
-                      />
-                     :
-                    <img
-                      src={require('images/nonImage.jpeg')}
-                      alt='Add profile_image'
-                      className={cx('profile_image')}
-                      />
-                    }
-                    </Link>
-                  </div>
+                    />
+                  </Link>
+                </div>
                   :
                   <div className={cx('right')}>
                     <Link to="/auth">

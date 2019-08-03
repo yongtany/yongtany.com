@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const Footer = () => (
+const Footer = ({ isLoggedIn, name }) => (
     <footer className={cx('footer')}>
       <div className={cx('f-container')}>
         <div className={cx('f-logo')}>
@@ -21,9 +21,17 @@ const Footer = () => (
           <li className={cx('nav-item')}>
             <Link to="/post" className={cx('link')}>Blog</Link>
           </li>
-          <li className={cx('nav-item')}>
-            <Link to="/auth" className={cx('link')}>Sign In</Link>
-          </li>
+          {isLoggedIn ?  (
+            <li className={cx('nav-item')}>
+              <Link to="/profile" className={cx('link')}>Profile</Link>
+            </li>
+            ) : (
+              <li className={cx('nav-item')}>
+                <Link to="/auth" className={cx('link')}>Sign In</Link>
+            </li>
+            )
+          }
+
         </ul>
       </div>
     </footer>
