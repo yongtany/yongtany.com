@@ -6,41 +6,36 @@ import { bindActionCreators } from 'redux'
 import * as listActions from 'store/modules/list';
 
 class ListContainer extends Component {
-  getPostList = () => {
-    // 페이지와 태그 값을 부모로부터 받아 옵니다.
-    const { tag, page, search, ListActions } = this.props;
-    if(tag) {
-      ListActions.getPostList({
-        page,
-        tag,
-      });
-    } else if(search) {
-      ListActions.searchPost({
-        page,
-        search,
-      });
-    } else {
-      ListActions.getPostList({
-        page,
-        tag,
-      });
-    }
-  }
+  getPostList = () => {
+    // 검색어, 태그, 페이지 값을 부모로부터 받아 옵니다.
+    // 부모컴포넌트에서 match.params을 이용해 url에서 자식컴포넌트로 props를 전달합니다.
+    const { tag, page, search, ListActions } = this.props;
+    if(search) {
+      ListActions.searchPost({
+        page,
+        search,
+      });
+    } else {
+      ListActions.getPostList({
+        page,
+        tag,
+      });
+    }
+  }
 
-  componentDidMount() {
-    this.getPostList();
-  }
+  componentDidMount() {
+    this.getPostList();
+  }
 
-  componentDidUpdate(prevProps, prevState) {
-    // 페이지/태그가 바뀔 때 리스트를 다시 불러옵니다.
-    if(prevProps.page !== this.props.page || prevProps.tag !== this.props.tag
-      || prevProps.search !== this.props.search) {
-      this.getPostList();
-      // 스크롤을 맨 위로 올립니다.
-      document.documentElement.scrollTop = 0;
-    }
-    window.scrollTo(0,0);
-  }
+  componentDidUpdate(prevProps, prevState) {
+    // 페이지/태그/검색어가 바뀔 때 리스트를 다시 불러옵니다.
+    if(prevProps.page !== this.props.page || prevProps.tag !== this.props.tag
+      || prevProps.search !== this.props.search) {
+      this.getPostList();
+      // 랜더링후 스크롤을 맨 위로 올립니다.
+      document.documentElement.scrollTop = 0;
+    }
+  }
 
   render() {
     const { loading, loading2, posts, page, lastPage, tag, search, isLoggedIn } = this.props;
