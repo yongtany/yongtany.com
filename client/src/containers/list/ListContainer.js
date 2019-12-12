@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PostList from 'components/list/PostList';
-import Loading from 'components/common/Loading';
+import PostSkeleton from 'components/skeleton/PostSkeleton';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as listActions from 'store/modules/list';
@@ -41,7 +41,7 @@ class ListContainer extends Component {
     const { loading, loading2, posts, page, lastPage, tag, search, isLoggedIn } = this.props;
     const canSearch = posts.toJS().length ? true : false;
 
-    if(loading || loading2) return <Loading />; // 로딩 중에는 아무것도 보여주지 않습니다.
+    if(loading || loading2) return (<PostSkeleton />); // 로딩 중에는 아무것도 보여주지 않습니다.
 
     return (
         <PostList

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "11.2.0",
+    "node": "11.10.1",
     "npm": "6.4.1",
     "yarn": "1.16.0"
   },

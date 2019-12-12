@@ -1,0 +1,82 @@
+@import 'styles/utils.scss';
+.skeleton-wrapper {
+  display: wrap;
+  .label {
+    font-size: 1.5rem;
+    font-weight: 100;
+    align-content: center;
+    color: $oc-gray-6;
+    white-space: nowrap;
+  }
+  .em-item {
+    width:40rem;
+    height: 300px;
+    margin: 60px auto;
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.07);
+    transition: .25s;
+    border-radius: 0.5rem;
+    display: flex;
+    @include media("<medium") {
+      width: 20rem;
+      height: 25rem;
+      flex-direction: column;
+    }
+
+    .em-image {
+      background-color:#DFDFDF;
+      height: 300px;
+      width: 180px;
+
+      @include media("<medium") {
+        width: 100%;
+        height: 10rem;
+      }
+    }
+
+    .content {
+      padding: 15px;
+      background-color:#fff;
+      width:75%;
+
+      @include media("<medium") {
+        width: 100%;
+      }
+
+      .em-title {
+        height: 2.5rem;
+        width: 10rem;
+        background-color:  rgba(0, 0, 0, 0.35);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      div {
+        .halfLine {
+          background-color : rgba(0, 0, 0, 0.2);
+          width: 15rem;
+          height: 1.25rem;
+        }
+      }
+      .fullLine {
+          background-color : rgba(0, 0, 0, 0.3);
+          width: 90%;
+          height: 1.25rem;
+          margin-top: 1.25rem;
+      }
+
+      .em-tags {
+        margin-top: 2.5rem;
+        display: flex;
+        .em-tag {
+          height: 1.3rem;
+          width: 5rem;
+          margin-right: 1rem;
+          border-radius: 40%;
+          background-color : rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+

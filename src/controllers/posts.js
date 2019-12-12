@@ -42,7 +42,6 @@ module.exports = {
     try {
       cloudinary.uploader.upload(req.file.path, async function(result) {
         req.body.postImage = result.secure_url;
-
         const post = await Post.createPost(req.body, req.user._id, req.body.postImage);
 
         return res.status(HTTPStatus.CREATED).json(post);
