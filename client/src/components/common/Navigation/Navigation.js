@@ -43,7 +43,7 @@ const Navigation = (props) => (
                       Blog
                     </Link>
                   </div>
-                  {props.isLoggedIn ?
+                  {/* {props.isLoggedIn ?
                   <div className={cx('right')}>
                   <Link to='/profile'>
                     <img
@@ -59,7 +59,7 @@ const Navigation = (props) => (
                       Sign in
                     </Link>
                   </div>
-                  }
+                  } */}
 
               </div>
           </div>

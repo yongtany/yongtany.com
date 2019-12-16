@@ -21,7 +21,7 @@ const Footer = ({ isLoggedIn, name }) => (
           <li className={cx('nav-item')}>
             <Link to="/post" className={cx('link')}>Blog</Link>
           </li>
-          {isLoggedIn ?  (
+          {/* {isLoggedIn ?  (
             <li className={cx('nav-item')}>
               <Link to="/profile" className={cx('link')}>Profile</Link>
             </li>
@@ -30,7 +30,7 @@ const Footer = ({ isLoggedIn, name }) => (
                 <Link to="/auth" className={cx('link')}>Sign In</Link>
             </li>
             )
-          }
+          } */}
 
         </ul>
       </div>

@@ -74,7 +74,8 @@
       }
       .right {
         // 오른쪽 내용
-        margin-left: auto;
+        // margin-left: auto;
+        margin-left: 3rem;
         @include media("<medium") {
           font-size: 12px;
         }
